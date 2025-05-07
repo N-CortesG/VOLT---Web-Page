@@ -1,0 +1,41 @@
+---
+// ThemeToggle.astro
+---
+
+<button
+  class="text-sm px-4 py-2 rounded bg-yellow-light dark:bg-dark-yellow-light text-white font-semibold shadow transition-colors duration-500"
+  onclick="toggleTheme()"
+>
+  <span id="theme-label">🌞 Claro</span>
+</button>
+
+<script is:inline>
+  const themeLabel = document.getElementById('theme-label');
+
+  function setTheme(mode) {
+    if (mode === 'dark') {
+      document.documentElement.classList.add('dark');
+      localStorage.setItem('theme', 'dark');
+      themeLabel.textContent = '🌙 Oscuro';
+    } else {
+      document.documentElement.classList.remove('dark');
+      localStorage.setItem('theme', 'light');
+      themeLabel.textContent = '🌞 Claro';
+    }
+  }
+
+  function toggleTheme() {
+    const isDark = document.documentElement.classList.contains('dark');
+    setTheme(isDark ? 'light' : 'dark');
+  }
+
+  // Inicializar el tema guardado
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+
+  if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+    setTheme('dark');
+  } else {
+    setTheme('light');
+  }
+</script>
