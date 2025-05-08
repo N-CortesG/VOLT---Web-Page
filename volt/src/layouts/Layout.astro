@@ -1,14 +1,15 @@
 ---
 import { ClientRouter } from 'astro:transitions';
 
+import Footer from '../components/Footer.astro';
+import ThemeManager from '../components/ThemeManager.jsx';
+import Header from '../components/Header/Header.astro';
+
 interface Props {
   title: string;
 }
 
 const { title } = Astro.props;
-
-import Header from '../components/Header.astro'; // Puedes personalizar o crear uno nuevo
-import Footer from '../components/Footer.astro'; // Opcional, te puedo crear uno también
 ---
 
 <html lang="es" class="scroll-smooth">
@@ -23,6 +24,7 @@ import Footer from '../components/Footer.astro'; // Opcional, te puedo crear uno
   <body
     class="bg-background-secondary text-text-primary dark:bg-dark-secondary dark:text-dark-text-primary"
   >
+    <ThemeManager client:only="react" />
     <Header />
 
     <main class="pt-20">
