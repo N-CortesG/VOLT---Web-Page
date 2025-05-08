@@ -2,6 +2,8 @@
 import Layout from '../layouts/Layout.astro';
 import Hero from '../components/Hero.astro';
 import FeatureCard from '../components/FeatureCard.astro';
+import mission from '../assets/icons/mission.svg';
+import vision from '../assets/icons/vision.svg';
 ---
 
 <Layout title="Sobre nosotros">
@@ -11,29 +13,18 @@ import FeatureCard from '../components/FeatureCard.astro';
     image="../../src/assets/img_2.jpg"
     cta={{ label: 'Cotiza ahora', href: '/cotizar' }}
   />
-  <div class="grid md:grid-cols-3 gap-6 container mx-auto py-12 px-4">
+  <div class="grid md:grid-cols-2 gap-6 container mx-auto py-12 px-4">
     <FeatureCard
-      tag="Contigo y tu futuro"
-      title="Visión"
-      description="Hacerte libre construyendo contigo y para ti la compañía energética verde que necesitas hoy."
-      image="/assets/vision.svg"
+      tag="Subtitulo"
+      title="Titulo"
+      description="lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      image={vision.src}
     />
     <FeatureCard
-      tag="Nuestra razón de ser"
-      title="Misión"
-      description="Hacer fácil la energía para ti, con soluciones transparentes e integrales, y permitiéndote gestionar tu producción y tu consumo."
-      image="/assets/mision.svg"
-    />
-    <FeatureCard
-      tag="Contigo y tu futuro"
-      title="Valores"
-      description=""
-      values={[
-        { icon: '/assets/honestos.svg', label: 'Honestos' },
-        { icon: '/assets/entusiastas.svg', label: 'Entusiastas' },
-        { icon: '/assets/equipo.svg', label: 'Trabajo en equipo' },
-        { icon: '/assets/libertad.svg', label: 'Libertad' },
-      ]}
+      tag="Subtitulo"
+      title="Titulo"
+      description="lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      image={mission.src}
     />
   </div>
 </Layout>

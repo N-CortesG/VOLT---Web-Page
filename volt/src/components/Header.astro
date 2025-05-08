@@ -40,11 +40,13 @@ const currentPath = Astro.url.pathname;
           </li>
         </ul>
       </nav>
+
       <a
         href="/cotizar"
         class="ml-4 px-4 py-2 bg-green-dark hover:bg-green-light dark:bg-dark-green-light dark:hover:bg-dark-green-dark text-white rounded-md font-semibold transition-colors duration-300"
         >Cotiza ahora</a
       >
+
       <ThemeToggle client:only="react" />
     </div>
   </div>
@@ -52,14 +54,14 @@ const currentPath = Astro.url.pathname;
   <!-- Mobile Header -->
   <div class="md:hidden px-4 flex items-center justify-between relative">
     <button
-      class="flex items-center px-3 py-2 border rounded z-10 transition-colors duration-300
+      id="menu-toggle"
+      class="flex items-center px-3 py-2 border rounded z-50 transition-colors duration-300
              text-text-primary border-line hover:bg-yellow-light/20
              dark:text-dark-text-primary dark:border-dark-line dark:hover:bg-dark-yellow-light/20
              bg-white dark:bg-dark-secondary"
-      onclick="const menu = document.getElementById('mobile-menu'); menu.classList.toggle('hidden'); menu.classList.toggle('opacity-0'); menu.classList.toggle('translate-y-[-10px]')"
+      onclick="toggleMenu()"
     >
-      <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
-        <title>Menu</title>
+      <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
         <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"></path>
       </svg>
     </button>
@@ -69,51 +71,82 @@ const currentPath = Astro.url.pathname;
     </a>
   </div>
 
-  <!-- Mobile Menu Overlay -->
+  <!-- Overlay oscuro -->
+  <div id="menu-overlay" class="hidden fixed inset-0 bg-black/40 z-30" onclick="closeMenu()"></div>
+
+  <!-- Mobile Menu -->
   <div
     id="mobile-menu"
     class="fixed top-[64px] left-0 right-0 bg-background dark:bg-dark-background px-4 py-6 hidden opacity-0 translate-y-[-10px] transition-all duration-300 ease-in-out z-40"
   >
     <nav>
-      <ul class="flex flex-col gap-3">
+      <ul class="flex flex-col divide-y divide-line dark:divide-dark-line">
         <li>
           <a
             href="/"
-            onclick="document.getElementById('mobile-menu').classList.add('hidden', 'opacity-0', 'translate-y-[-10px]')"
-            class="block px-4 py-2 rounded-md hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20"
+            onclick="closeMenu()"
+            class="block px-4 py-3 hover:bg-yellow-light/10 dark:hover:bg-dark-yellow-light/10"
             >Sobre Nosotros</a
           >
         </li>
         <li>
           <a
             href="/services"
-            onclick="document.getElementById('mobile-menu').classList.add('hidden', 'opacity-0', 'translate-y-[-10px]')"
-            class="block px-4 py-2 rounded-md hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20"
+            onclick="closeMenu()"
+            class="block px-4 py-3 hover:bg-yellow-light/10 dark:hover:bg-dark-yellow-light/10"
             >Servicios</a
           >
         </li>
         <li>
           <a
             href="/contact"
-            onclick="document.getElementById('mobile-menu').classList.add('hidden', 'opacity-0', 'translate-y-[-10px]')"
-            class="block px-4 py-2 rounded-md hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20"
+            onclick="closeMenu()"
+            class="block px-4 py-3 hover:bg-yellow-light/10 dark:hover:bg-dark-yellow-light/10"
             >Contacto</a
           >
         </li>
         <li>
           <a
             href="/cotizar"
-            onclick="document.getElementById('mobile-menu').classList.add('hidden', 'opacity-0', 'translate-y-[-10px]')"
-            class="block px-4 py-2 bg-green-light hover:bg-green-dark dark:bg-dark-green-light dark:hover:bg-dark-green-dark text-white rounded-md text-center"
+            onclick="closeMenu()"
+            class="block px-4 py-3 mt-2 bg-green-light hover:bg-green-dark dark:bg-dark-green-light dark:hover:bg-dark-green-dark text-white rounded-md text-center"
             >Cotiza ahora</a
           >
         </li>
-        <li>
-          <div class="flex justify-center pt-2">
+        <li class="pt-4">
+          <div class="flex justify-center">
             <ThemeToggle client:only="react" />
           </div>
         </li>
       </ul>
     </nav>
   </div>
+
+  <!-- Script inline -->
+  <script is:inline>
+    const toggleMenu = () => {
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('menu-overlay');
+      menu.classList.toggle('hidden');
+      menu.classList.toggle('opacity-0');
+      menu.classList.toggle('translate-y-[-10px]');
+      overlay.classList.toggle('hidden');
+    };
+
+    const closeMenu = () => {
+      const menu = document.getElementById('mobile-menu');
+      const overlay = document.getElementById('menu-overlay');
+      if (!menu.classList.contains('hidden')) {
+        menu.classList.add('hidden', 'opacity-0', 'translate-y-[-10px]');
+        overlay.classList.add('hidden');
+      }
+    };
+
+    // Cierra si cambia el modo de color
+    const observer = new MutationObserver(closeMenu);
+    observer.observe(document.documentElement, {
+      attributes: true,
+      attributeFilter: ['class'],
+    });
+  </script>
 </header>
