@@ -22,15 +22,15 @@ const { title } = Astro.props;
     <link rel="icon" href="/favicon.svg" />
   </head>
   <body
-    class="bg-background-secondary text-text-primary dark:bg-dark-secondary dark:text-dark-text-primary"
+    class="flex flex-col min-h-screen bg-background-secondary text-text-primary dark:bg-dark-secondary dark:text-dark-text-primary"
   >
     <ThemeManager client:only="react" />
     <Header />
 
-    <main class="pt-20">
+    <main class="flex-1 pt-20">
       <slot />
     </main>
 
-    <!-- <Footer /> -->
+    <Footer />
   </body>
 </html>
