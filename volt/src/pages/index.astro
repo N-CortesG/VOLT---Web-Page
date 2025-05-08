@@ -1,5 +1,13 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
 ---
 
-<Layout title="Sobre nosotros" />
+<Layout title="Sobre nosotros">
+  <Hero
+    title="Quiénes somos"
+    subtitle="Soluciones solares que transforman tu mundo."
+    image="../../src/assets/CasaPanelSolar.jpg"
+    cta={{ label: 'Cotiza ahora', href: '/cotizar' }}
+  />
+</Layout>
