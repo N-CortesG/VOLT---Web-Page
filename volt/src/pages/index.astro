@@ -1,5 +1,39 @@
 ---
 import Layout from '../layouts/Layout.astro';
+import Hero from '../components/Hero.astro';
+import FeatureCard from '../components/FeatureCard.astro';
 ---
 
-<Layout title="Sobre nosotros" />
+<Layout title="Sobre nosotros">
+  <Hero
+    title="Quiénes somos"
+    subtitle="Soluciones solares que transforman tu mundo."
+    image="../../src/assets/img_2.jpg"
+    cta={{ label: 'Cotiza ahora', href: '/cotizar' }}
+  />
+  <div class="grid md:grid-cols-3 gap-6 container mx-auto py-12 px-4">
+    <FeatureCard
+      tag="Contigo y tu futuro"
+      title="Visión"
+      description="Hacerte libre construyendo contigo y para ti la compañía energética verde que necesitas hoy."
+      image="/assets/vision.svg"
+    />
+    <FeatureCard
+      tag="Nuestra razón de ser"
+      title="Misión"
+      description="Hacer fácil la energía para ti, con soluciones transparentes e integrales, y permitiéndote gestionar tu producción y tu consumo."
+      image="/assets/mision.svg"
+    />
+    <FeatureCard
+      tag="Contigo y tu futuro"
+      title="Valores"
+      description=""
+      values={[
+        { icon: '/assets/honestos.svg', label: 'Honestos' },
+        { icon: '/assets/entusiastas.svg', label: 'Entusiastas' },
+        { icon: '/assets/equipo.svg', label: 'Trabajo en equipo' },
+        { icon: '/assets/libertad.svg', label: 'Libertad' },
+      ]}
+    />
+  </div>
+</Layout>

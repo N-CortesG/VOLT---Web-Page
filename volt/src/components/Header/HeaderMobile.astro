@@ -1,6 +1,6 @@
 ---
 import ThemeToggle from '../ThemeToggle';
-import logo from '../../assets/logo.svg';
+import logo from '../../../public/logo.svg';
 
 const currentPath = Astro.url.pathname;
 ---
@@ -11,7 +11,10 @@ const currentPath = Astro.url.pathname;
   </a>
 
   <button
-    class="flex items-center px-3 py-2 border rounded text-text-primary border-line dark:border-dark-line hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20 z-10"
+    class="flex items-center px-3 py-2 border rounded z-10 transition-colors duration-300
+           text-text-primary border-line hover:bg-yellow-light/20
+           dark:text-dark-text-primary dark:border-dark-line dark:hover:bg-dark-yellow-light/20
+           bg-white dark:bg-dark-secondary"
     onclick="const menu = document.getElementById('mobile-menu'); menu.classList.toggle('hidden'); menu.classList.toggle('opacity-0'); menu.classList.toggle('translate-y-[-10px]')"
   >
     <svg class="fill-current h-4 w-4" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
@@ -59,7 +62,11 @@ const currentPath = Astro.url.pathname;
           >Cotiza ahora</a
         >
       </li>
-      <li><div class="flex justify-center pt-2"><ThemeToggle client:only="react" /></div></li>
+      <li>
+        <div class="flex justify-center pt-2">
+          <ThemeToggle client:only="react" />
+        </div>
+      </li>
     </ul>
   </nav>
 </div>
