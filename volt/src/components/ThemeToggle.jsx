@@ -24,7 +24,7 @@ export default function ThemeToggle() {
     <button
       onClick={toggleTheme}
       aria-label="Cambiar tema claro/oscuro"
-      className="flex items-center justify-center h-12 w-12 rounded-lg p-2 hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors duration-300 group"
+      className="flex items-center justify-center h-12 w-12 rounded-lg p-2 hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20 transition-colors duration-300 group"
     >
       {/* Sol */}
       {!isDark && (
