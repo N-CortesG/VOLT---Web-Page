@@ -1,0 +1,173 @@
+<section class="text-center">
+  <form id="contact-form" method="POST" class="mx-auto max-w-xl text-left rounded-xl space-y-6">
+    <!-- EMAIL -->
+    <div>
+      <label for="email" class="form-label">Correo electrónico *</label>
+      <input
+        type="email"
+        name="email"
+        id="email"
+        required
+        placeholder="ejemplo@email.com"
+        class="form-input"
+      />
+    </div>
+
+    <!-- NOMBRE -->
+    <div>
+      <label for="name" class="form-label">Nombre completo *</label>
+      <input
+        type="text"
+        name="name"
+        id="name"
+        required
+        placeholder="Tu nombre"
+        class="form-input"
+      />
+    </div>
+
+    <!-- TELÉFONO -->
+    <div>
+      <label for="phone" class="form-label">Teléfono *</label>
+      <input
+        type="tel"
+        name="phone"
+        id="phone"
+        required
+        pattern="3[0-9]{9}"
+        title="Debe comenzar con 3 y tener 10 dígitos sin espacios"
+        placeholder="3001234567"
+        class="form-input"
+        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+      />
+    </div>
+
+    <!-- MENSAJE -->
+    <div>
+      <label for="message" class="form-label">Mensaje</label>
+      <textarea
+        name="message"
+        id="message"
+        rows="4"
+        placeholder="Cuéntanos qué necesitas"
+        class="form-input"></textarea>
+    </div>
+
+    <p class="text-sm mt-2 text-gray-500 dark:text-gray-400 italic">* Campos obligatorios</p>
+
+    <button type="submit" class="btn-primary w-full"> Solicitar cotización </button>
+  </form>
+
+  <!-- MODAL DE ÉXITO -->
+  <div
+    id="success-modal"
+    class="fixed inset-0 flex items-center justify-center bg-black/60 z-50 hidden"
+  >
+    <div
+      class="bg-white dark:bg-dark-background text-center rounded-lg shadow-lg p-8 max-w-md animate-fade-in"
+    >
+      <svg
+        class="mx-auto mb-4 w-16 h-16 text-green-dark dark:text-green-light"
+        fill="currentColor"
+        viewBox="0 0 256 173"
+      >
+        <path
+          d="M128.253,56.864c15.186,0,27.432-12.247,27.432-27.432S143.536,2,128.253,2c-15.186,0-27.432,12.247-27.432,27.432C100.918,44.716,113.165,56.864,128.253,56.864z M64.571,136.32h-49.28c-15.969,0-16.851-24.395,0.294-24.395H58.3l24.493-36.054c7.25-9.895,15.48-14.598,27.138-14.598h36.544c11.659,0,19.888,4.311,27.138,14.598l24.591,36.054h43.01c17.243,0,16.165,24.395,0.588,24.395h-49.28c-3.919,0-8.622-1.372-11.365-5.584l-18.811-26.844l-0.098,67.209H94.844l-0.098-67.209l-18.811,26.844C73.192,134.85,68.49,136.32,64.571,136.32z"
+        ></path>
+      </svg>
+      <h3 class="text-xl font-bold text-green-dark dark:text-green-light">
+        ¡Gracias por tu mensaje!
+      </h3>
+      <p class="mt-2 text-text-secondary dark:text-dark-text-secondary">
+        Te contactaremos muy pronto vía WhatsApp o correo electrónico.
+      </p>
+      <button
+        id="close-modal-btn"
+        class="mt-6 px-6 py-2 bg-green-dark hover:bg-green-light dark:bg-dark-green-light dark:hover:bg-dark-green-dark text-white rounded-md"
+      >
+        Cerrar (5)
+      </button>
+    </div>
+  </div>
+</section>
+
+<style>
+  .form-label {
+    @apply block font-semibold mb-1 text-text-primary dark:text-dark-text-primary;
+  }
+  .form-input {
+    @apply w-full px-4 py-2 rounded-md border border-line dark:border-dark-line bg-background dark:bg-dark-background text-text-primary dark:text-dark-text-primary;
+  }
+  .btn-primary {
+    @apply bg-green-dark hover:bg-green-light dark:bg-dark-green-light dark:hover:bg-dark-green-dark text-white font-semibold px-6 py-3 rounded-md transition-colors;
+  }
+  .modal-box {
+    @apply bg-white dark:bg-dark-background rounded-lg shadow-lg p-8 max-w-md;
+  }
+  .animate-fade-in {
+    animation: fadeIn 0.4s ease-out forwards;
+  }
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+  .no-scroll {
+    overflow: hidden;
+  }
+</style>
+
+<script is:inline>
+  const form = document.querySelector('#contact-form');
+  const modal = document.getElementById('success-modal');
+  const closeBtn = document.getElementById('close-modal-btn');
+
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const data = new FormData(form);
+
+    try {
+      await fetch(
+        'https://script.google.com/macros/s/AKfycbxAAO0j8rLP23hPDhYreYeb-wfPyxqXZ6UdRgz8HBarS8EaY30wFBytR3-P5vHJM2FBLw/exec',
+        {
+          method: 'POST',
+          body: data,
+        }
+      );
+
+      form.reset();
+      modal.classList.remove('hidden');
+      document.body.classList.add('no-scroll');
+
+      let countdown = 5;
+      closeBtn.textContent = `Cerrar (${countdown})`;
+
+      const interval = setInterval(() => {
+        countdown--;
+        closeBtn.textContent = `Cerrar (${countdown})`;
+        if (countdown === 0) {
+          clearInterval(interval);
+          closeModal();
+        }
+      }, 1000);
+
+      closeBtn.addEventListener('click', () => {
+        clearInterval(interval);
+        closeModal();
+      });
+
+      function closeModal() {
+        modal.classList.add('hidden');
+        document.body.classList.remove('no-scroll');
+      }
+    } catch (error) {
+      alert('Error al enviar. Intenta de nuevo.');
+      console.error(error);
+    }
+  });
+</script>
