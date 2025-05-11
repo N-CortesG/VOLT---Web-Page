@@ -8,19 +8,31 @@ import FeatureCard from '../components/FeatureCard.astro';
   <Hero
     title="Quiénes somos"
     subtitle="Soluciones solares que transforman tu mundo."
-    image="../../src/assets/img_2.jpg"
+    image="../../public/img_2.jpg"
     cta={{ label: 'Cotiza ahora', href: '/contact' }}
   />
   <div class="grid md:grid-cols-2 gap-6 container mx-auto py-12 px-4">
     <FeatureCard
-      tag="Subtitulo"
-      title="Titulo"
-      description="lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+      tag="MISIÓN"
+      title="Impulsar la innovación energética en Colombia"
+      description="Ser líderes en innovación energética en Colombia, impulsando la transición hacia un modelo energético sostenible mediante soluciones solares inteligentes. Ampliamos nuestra presencia en los sectores residencial, comercial e industrial a nivel nacional."
+      image="../../public/img_1.jpg"
     />
     <FeatureCard
-      tag="Subtitulo"
-      title="Titulo"
-      description="lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
-    />
+      tag="VISIÓN"
+      title="Transformar el futuro con energía limpia y tecnología"
+      description="En VOLT SOLAR ENERGY diseñamos e implementamos soluciones solares fotovoltaicas adaptadas a cada cliente, promoviendo un futuro más eficiente, sostenible y automatizado mediante tecnologías avanzadas y nuestra experiencia en ingeniería mecatrónica."
+      showIconSlot={true}
+    >
+      <svg
+        slot="icon"
+        viewBox="0 0 100 100"
+        fill="currentColor"
+        class="w-full h-full"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <!-- solo el <path> o elementos relevantes del SVG -->
+      </svg>
+    </FeatureCard>
   </div>
 </Layout>
