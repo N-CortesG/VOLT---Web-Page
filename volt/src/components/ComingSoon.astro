@@ -1,4 +1,7 @@
 ---
+import { getTranslation } from '../i18n';
+
+const t = getTranslation('es');
 interface Props {
   title?: string;
   message?: string;
@@ -7,9 +10,9 @@ interface Props {
 }
 
 const {
-  title = 'Esta página no está disponible',
-  message = 'Estamos trabajando para mejorar esta sección. Muy pronto estará disponible para ti.',
-  buttonText = 'Volver al inicio',
+  title = t.comingSoon.title,
+  message = t.comingSoon.message,
+  buttonText = t.comingSoon.buttonText,
   redirectTo = '/',
 } = Astro.props;
 ---

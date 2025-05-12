@@ -1,0 +1,38 @@
+---
+import FeatureCard from '../../components/FeatureCard.astro';
+import Hero from '../../components/Hero.astro';
+import Layout from '@layouts/Layout.astro';
+import { getTranslation } from '@i18n/index';
+
+const lang = Astro.params.lang;
+const currentLang = lang === 'es' || lang === 'en' ? lang : 'es';
+
+const t = getTranslation(lang as 'es' | 'en');
+
+export async function getStaticPaths() {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
+}
+---
+
+<Layout lang={currentLang} t={getTranslation(currentLang)} title="Sobre nosotros">
+  <Hero
+    title="Quiénes somos"
+    subtitle="Soluciones solares que transforman tu mundo."
+    image=""
+    cta={{ label: 'Cotiza ahora', href: '/contact' }}
+  />
+  <div class="grid md:grid-cols-2 gap-6 container mx-auto py-12 px-4">
+    <FeatureCard
+      tag="MISIÓN"
+      title="Impulsar la innovación energética en Colombia"
+      description="Ser líderes en innovación energética en Colombia, impulsando la transición hacia un modelo energético sostenible mediante soluciones solares inteligentes. Ampliamos nuestra presencia en los sectores residencial, comercial e industrial a nivel nacional."
+      image=""
+    />
+    <FeatureCard
+      tag="VISIÓN"
+      title="Transformar el futuro con energía limpia y tecnología"
+      description="En VOLT SOLAR ENERGY diseñamos e implementamos soluciones solares fotovoltaicas adaptadas a cada cliente, promoviendo un futuro más eficiente, sostenible y automatizado mediante tecnologías avanzadas y nuestra experiencia en ingeniería mecatrónica."
+      image=""
+    />
+  </div>
+</Layout>

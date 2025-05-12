@@ -1,10 +1,14 @@
 ---
 import socialLinks from '../../data/socialLinks';
 import ThemeToggle from '../ThemeToggle';
+
 export interface Props {
   currentPath: string;
+  lang: 'es' | 'en';
+  t: any;
 }
-const { currentPath } = Astro.props;
+
+const { currentPath, lang, t } = Astro.props;
 ---
 
 <!-- Mobile Menu -->
@@ -16,7 +20,7 @@ const { currentPath } = Astro.props;
     <ul class="flex flex-col divide-y divide-line dark:divide-dark-line">
       <li>
         <a
-          href="/"
+          href={`/${lang}`}
           onclick="closeMenu()"
           class={`block px-4 py-3 rounded-md font-medium transition-colors duration-300 ${
             currentPath === '/'
@@ -24,12 +28,12 @@ const { currentPath } = Astro.props;
               : 'hover:bg-yellow-light/10 dark:hover:bg-dark-yellow-light/10'
           }`}
         >
-          Sobre Nosotros
+          {t.header.about}
         </a>
       </li>
       <li>
         <a
-          href="/services"
+          href={`/${lang}/services`}
           onclick="closeMenu()"
           class={`block px-4 py-3 rounded-md font-medium transition-colors duration-300 ${
             currentPath.startsWith('/services')
@@ -37,12 +41,12 @@ const { currentPath } = Astro.props;
               : 'hover:bg-yellow-light/10 dark:hover:bg-dark-yellow-light/10'
           }`}
         >
-          Servicios
+          {t.header.services}
         </a>
       </li>
       <li>
         <a
-          href="/contact"
+          href={`/${lang}/contact`}
           onclick="closeMenu()"
           class={`block px-4 py-3 rounded-md font-medium transition-colors duration-300 ${
             currentPath.startsWith('/contact')
@@ -50,7 +54,7 @@ const { currentPath } = Astro.props;
               : 'hover:bg-yellow-light/10 dark:hover:bg-dark-yellow-light/10'
           }`}
         >
-          Contacto
+          {t.header.contact}
         </a>
       </li>
     </ul>
@@ -67,7 +71,6 @@ const { currentPath } = Astro.props;
         target="_blank"
         rel="noopener noreferrer"
       >
-        <!-- Ícono real de WhatsApp -->
         <svg
           xmlns="http://www.w3.org/2000/svg"
           class="w-5 h-5"

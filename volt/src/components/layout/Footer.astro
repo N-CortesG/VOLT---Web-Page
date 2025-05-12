@@ -2,6 +2,12 @@
 import socialLinks from '../../data/socialLinks';
 
 const year = new Date().getFullYear();
+
+export interface Props {
+  lang: 'es' | 'en';
+  t: any;
+}
+const { lang, t } = Astro.props;
 ---
 
 <footer
@@ -101,7 +107,7 @@ const year = new Date().getFullYear();
           </svg>
         </a>
       </div>
-      <p class="text-xs mt-2">Únete a nuestras redes y entérate de las últimas novedades.</p>
+      <p class="text-xs mt-2">{t.footer.newsletter}</p>
     </div>
   </div>
   <div class="text-center text-xs py-4 border-t border-line dark:border-dark-line">

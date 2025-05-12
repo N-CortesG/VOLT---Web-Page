@@ -5,6 +5,12 @@ import Overlay from './Overlay.astro';
 import socialLinks from '../../data/socialLinks';
 
 const currentPath = Astro.url.pathname;
+
+export interface Props {
+  lang: 'es' | 'en';
+  t: any;
+}
+const { lang, t } = Astro.props;
 ---
 
 <header
@@ -12,7 +18,7 @@ const currentPath = Astro.url.pathname;
 >
   <!-- Desktop Header -->
   <div class="hidden md:flex container mx-auto px-4 justify-between items-center">
-    <a href="/" aria-label="Inicio">
+    <a href={`/${lang}`} aria-label="Inicio">
       <img src="/logos/logo_2.svg" alt="Volt Solar Energy" class="h-12 md:h-14 w-auto" />
     </a>
 
@@ -20,38 +26,38 @@ const currentPath = Astro.url.pathname;
       <ul class="flex gap-2">
         <li>
           <a
-            href="/"
+            href={`/${lang}`}
             class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
               currentPath === '/'
                 ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
                 : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
             }`}
           >
-            Sobre Nosotros
+            {t.header.about}
           </a>
         </li>
         <li>
           <a
-            href="/services"
+            href={`/${lang}/services`}
             class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
               currentPath.startsWith('/services')
                 ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
                 : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
             }`}
           >
-            Servicios
+            {t.header.services}
           </a>
         </li>
         <li>
           <a
-            href="/contact"
+            href={`/${lang}/contact`}
             class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
               currentPath.startsWith('/contact')
                 ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
                 : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
             }`}
           >
-            Contacto
+            {t.header.contact}
           </a>
         </li>
       </ul>
@@ -106,8 +112,7 @@ const currentPath = Astro.url.pathname;
 
   <!-- Overlay y menú móvil -->
   <Overlay />
-  <MobileMenu currentPath={currentPath} />
-
+  <MobileMenu currentPath={currentPath} lang={lang} t={t} />
   <!-- JS Menu Handler -->
   <script is:inline>
     const toggleMenu = () => {
