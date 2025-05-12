@@ -1,0 +1,59 @@
+---
+export interface Props {
+  tag: string;
+  title: string;
+  description: string;
+  image?: string;
+  values?: { icon: string; label: string }[];
+}
+
+const { tag, title, description, image, values } = Astro.props;
+---
+
+<article
+  class="bg-background dark:bg-dark-background border border-line dark:border-dark-line rounded-2xl shadow-xl p-8 flex flex-col justify-between transition-transform duration-300 hover:scale-[1.02]"
+  aria-label={title}
+>
+  <!-- Encabezado -->
+  <div>
+    <p
+      class="text-yellow-light font-semibold text-sm dark:text-dark-yellow-light tracking-wide uppercase mb-3"
+    >
+      {tag}
+    </p>
+    <h3 class="text-2xl font-bold text-green-dark dark:text-green-light mb-4">{title}</h3>
+    <p class="text-base text-text-primary dark:text-dark-text-primary leading-relaxed">
+      {description}
+    </p>
+  </div>
+
+  <!-- Imagen principal -->
+  {
+    image && (
+      <div class="mt-8 relative h-32">
+        <img src={image} alt={title} class="h-32 mx-auto object-contain block dark:hidden" />
+        <img
+          src={image.replace('_light', '_dark')}
+          alt={title}
+          class="h-32 mx-auto object-contain hidden dark:block absolute top-0 left-1/2 -translate-x-1/2"
+        />
+      </div>
+    )
+  }
+
+  <!-- Valores con íconos -->
+  {
+    values && (
+      <div class="flex justify-center flex-wrap gap-4 mt-8">
+        {values.map((val) => (
+          <figure class="flex flex-col items-center text-center max-w-[80px]">
+            <img src={val.icon} alt={val.label} class="h-10 w-10" loading="lazy" />
+            <figcaption class="mt-2 text-sm text-text-secondary dark:text-dark-text-secondary">
+              {val.label}
+            </figcaption>
+          </figure>
+        ))}
+      </div>
+    )
+  }
+</article>
