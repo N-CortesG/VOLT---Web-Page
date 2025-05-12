@@ -1,5 +1,4 @@
 ---
-import { ClientRouter } from 'astro:transitions';
 import ThemeManager from '../scripts/ThemeManager.jsx';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
@@ -37,10 +36,9 @@ const { title, description = '', lang, t } = Astro.props;
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" href="/favicon.ico" />
+    
 
     <!-- Transiciones de página -->
-    <ClientRouter />
-  </head>
   <body
     class="flex flex-col min-h-screen bg-background-secondary text-text-primary dark:bg-dark-secondary dark:text-dark-text-primary"
   >
