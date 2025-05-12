@@ -1,4 +1,5 @@
 ---
+import LanguageSwitcher from '@components/LanguageSwitcher.astro';
 import socialLinks from '../../data/socialLinks';
 import ThemeToggle from '../ThemeToggle';
 
@@ -9,6 +10,7 @@ export interface Props {
 }
 
 const { currentPath, lang, t } = Astro.props;
+const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
 ---
 
 <!-- Mobile Menu -->
@@ -23,7 +25,7 @@ const { currentPath, lang, t } = Astro.props;
           href={`/${lang}`}
           onclick="closeMenu()"
           class={`block px-4 py-3 rounded-md font-medium transition-colors duration-300 ${
-            currentPath === '/'
+            pathWithoutLang === '/'
               ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
               : 'hover:bg-yellow-light/10 dark:hover:bg-dark-yellow-light/10'
           }`}
@@ -36,7 +38,7 @@ const { currentPath, lang, t } = Astro.props;
           href={`/${lang}/services`}
           onclick="closeMenu()"
           class={`block px-4 py-3 rounded-md font-medium transition-colors duration-300 ${
-            currentPath.startsWith('/services')
+            pathWithoutLang.startsWith('/services')
               ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
               : 'hover:bg-yellow-light/10 dark:hover:bg-dark-yellow-light/10'
           }`}
@@ -49,7 +51,7 @@ const { currentPath, lang, t } = Astro.props;
           href={`/${lang}/contact`}
           onclick="closeMenu()"
           class={`block px-4 py-3 rounded-md font-medium transition-colors duration-300 ${
-            currentPath.startsWith('/contact')
+            pathWithoutLang.startsWith('/contact')
               ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
               : 'hover:bg-yellow-light/10 dark:hover:bg-dark-yellow-light/10'
           }`}
@@ -59,8 +61,10 @@ const { currentPath, lang, t } = Astro.props;
       </li>
     </ul>
 
-    <div class="mt-6 flex justify-center">
+    <!-- Tema + Selector de idioma juntos -->
+    <div class="mt-6 flex justify-center items-center gap-4">
       <ThemeToggle client:only="react" />
+      <LanguageSwitcher lang={lang} />
     </div>
 
     <div class="flex justify-center mt-6">

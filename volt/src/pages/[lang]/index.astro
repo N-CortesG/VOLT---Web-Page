@@ -16,23 +16,10 @@ export async function getStaticPaths() {
 
 <Layout lang={currentLang} t={getTranslation(currentLang)} title="Sobre nosotros">
   <Hero
-    title="Quiénes somos"
-    subtitle="Soluciones solares que transforman tu mundo."
-    image=""
-    cta={{ label: 'Cotiza ahora', href: '/contact' }}
+    title={t.heroAbout.title}
+    subtitle={t.heroAbout.subtitle}
+    image="/img/img_2.jpg"
+    lang={currentLang}
+    t={t}
   />
-  <div class="grid md:grid-cols-2 gap-6 container mx-auto py-12 px-4">
-    <FeatureCard
-      tag="MISIÓN"
-      title="Impulsar la innovación energética en Colombia"
-      description="Ser líderes en innovación energética en Colombia, impulsando la transición hacia un modelo energético sostenible mediante soluciones solares inteligentes. Ampliamos nuestra presencia en los sectores residencial, comercial e industrial a nivel nacional."
-      image=""
-    />
-    <FeatureCard
-      tag="VISIÓN"
-      title="Transformar el futuro con energía limpia y tecnología"
-      description="En VOLT SOLAR ENERGY diseñamos e implementamos soluciones solares fotovoltaicas adaptadas a cada cliente, promoviendo un futuro más eficiente, sostenible y automatizado mediante tecnologías avanzadas y nuestra experiencia en ingeniería mecatrónica."
-      image=""
-    />
-  </div>
 </Layout>

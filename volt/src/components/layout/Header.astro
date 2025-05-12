@@ -3,14 +3,17 @@ import ThemeToggle from '../ThemeToggle';
 import MobileMenu from './MobileMenu.astro';
 import Overlay from './Overlay.astro';
 import socialLinks from '../../data/socialLinks';
-
-const currentPath = Astro.url.pathname;
+import LanguageSwitcher from '@components/LanguageSwitcher.astro';
 
 export interface Props {
   lang: 'es' | 'en';
   t: any;
 }
+
+const currentPath = Astro.url.pathname;
 const { lang, t } = Astro.props;
+
+const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
 ---
 
 <header
@@ -28,7 +31,7 @@ const { lang, t } = Astro.props;
           <a
             href={`/${lang}`}
             class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
-              currentPath === '/'
+              pathWithoutLang === '/'
                 ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
                 : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
             }`}
@@ -40,7 +43,7 @@ const { lang, t } = Astro.props;
           <a
             href={`/${lang}/services`}
             class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
-              currentPath.startsWith('/services')
+              pathWithoutLang.startsWith('/services')
                 ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
                 : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
             }`}
@@ -52,7 +55,7 @@ const { lang, t } = Astro.props;
           <a
             href={`/${lang}/contact`}
             class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
-              currentPath.startsWith('/contact')
+              pathWithoutLang.startsWith('/contact')
                 ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
                 : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
             }`}
@@ -84,6 +87,7 @@ const { lang, t } = Astro.props;
       </a>
 
       <ThemeToggle client:only="react" />
+      <LanguageSwitcher lang={lang} class="ml-4" />
     </div>
   </div>
 
