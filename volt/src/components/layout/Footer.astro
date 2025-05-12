@@ -1,17 +1,20 @@
 ---
+import socialLinks from '../../data/socialLinks';
 
+const year = new Date().getFullYear();
 ---
 
 <footer
   class="bg-background text-text-secondary dark:bg-dark-background dark:text-dark-text-secondary border-t border-line dark:border-dark-line transition-colors duration-300"
+  role="contentinfo"
 >
   <div class="container mx-auto px-4 py-6 grid grid-cols-1 gap-y-6 md:grid-cols-4 md:gap-8 text-sm">
     <!-- Logo y descripción -->
     <div
       class="col-span-2 md:col-span-1 flex flex-col items-center text-center md:items-start md:text-left"
     >
-      <a href="/" class="inline-block mb-4">
-        <img src="" alt="Logo de Volt Solar Energy" class="h-10" />
+      <a href="/" class="inline-block mb-4" aria-label="Ir al inicio">
+        <img src="/logos/logo_2.svg" alt="Logo de Volt Solar Energy" class="h-10 w-auto" />
       </a>
       <p class="max-w-xs">
         Volt Solar Energy impulsa el futuro sostenible con soluciones solares innovadoras para
@@ -20,37 +23,42 @@
     </div>
 
     <!-- Navegación -->
-    <div>
+    <nav aria-label="Enlaces principales">
       <h3 class="font-semibold text-text-primary dark:text-dark-text-primary mb-2">Enlaces</h3>
       <ul class="space-y-1">
         <li><a href="/" class="hover:underline">Inicio</a></li>
         <li><a href="/services" class="hover:underline">Servicios</a></li>
         <li><a href="/contact" class="hover:underline">Contacto</a></li>
-        <li><a href="/contact" class="hover:underline">Cotiza ahora</a></li>
+        <li><a href="/contact#cotiza" class="hover:underline">Cotiza ahora</a></li>
       </ul>
-    </div>
+    </nav>
 
     <!-- Contacto -->
     <div>
       <h3 class="font-semibold text-text-primary dark:text-dark-text-primary mb-2">Contacto</h3>
-      <ul class="space-y-1">
+      <ul class="space-y-1" aria-label="Información de contacto">
         <li>
-          <a href="mailto:voltsolarcol@gmail.com" class="hover:underline">voltsolarcol@gmail.com</a>
+          <a href={socialLinks.email} class="hover:underline">voltsolarcol@gmail.com</a>
         </li>
         <li>
-          <a href="https://wa.me/573156619502" class="hover:underline">+57 315 661 9502</a>
+          <a
+            href={socialLinks.whatsapp}
+            class="hover:underline"
+            target="_blank"
+            rel="noopener noreferrer">+57 315 661 9502</a
+          >
         </li>
         <li>Cali, Colombia</li>
       </ul>
     </div>
 
-    <!-- Redes -->
+    <!-- Redes sociales -->
     <div>
       <h3 class="font-semibold text-text-primary dark:text-dark-text-primary mb-2">Síguenos</h3>
       <div class="flex space-x-4 text-xl">
         <!-- Facebook -->
         <a
-          href="https://facebook.com/voltsolarenergy"
+          href={socialLinks.facebook}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Facebook"
@@ -65,7 +73,7 @@
 
         <!-- Instagram -->
         <a
-          href="https://www.instagram.com/voltsolarenergy_col/"
+          href={socialLinks.instagram}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="Instagram"
@@ -80,7 +88,7 @@
 
         <!-- LinkedIn -->
         <a
-          href="https://linkedin.com/company/voltsolarenergy"
+          href={socialLinks.linkedin}
           target="_blank"
           rel="noopener noreferrer"
           aria-label="LinkedIn"
@@ -97,6 +105,6 @@
     </div>
   </div>
   <div class="text-center text-xs py-4 border-t border-line dark:border-dark-line">
-    © {new Date().getFullYear()} Volt Solar Energy. Todos los derechos reservados.
+    © {year} Volt Solar Energy. Todos los derechos reservados.
   </div>
 </footer>
