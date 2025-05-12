@@ -4,22 +4,50 @@ import Hero from '../../components/Hero.astro';
 import Layout from '@layouts/Layout.astro';
 import { getTranslation } from '@i18n/index';
 
+// Idioma
 const lang = Astro.params.lang;
 const currentLang = lang === 'es' || lang === 'en' ? lang : 'es';
 
-const t = getTranslation(lang as 'es' | 'en');
+const t = getTranslation(currentLang);
 
+// Rutas estáticas
 export async function getStaticPaths() {
   return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
 }
 ---
 
-<Layout lang={currentLang} t={getTranslation(currentLang)} title="Sobre nosotros">
+<Layout lang={currentLang} t={t} title="Sobre nosotros">
   <Hero
-    title={t.heroAbout.title}
-    subtitle={t.heroAbout.subtitle}
+    title={t.index.hero.title}
+    subtitle={t.index.hero.subtitle}
     image="/img/img_2.jpg"
     lang={currentLang}
     t={t}
   />
+
+  <section class="text-center py-6 px-4 md:py-10">
+    <h2 class="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-white">
+      {t.index.aboutUs.title}
+    </h2>
+    <p
+      class="mt-4 text-lg text-text-secondary dark:text-dark-text-secondary max-w-[800px] md:max-w-4xl mx-auto"
+    >
+      {t.index.aboutUs.description}
+    </p>
+  </section>
+
+  <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-6xl mx-auto px-4 py-6 md:mt-[-40px]">
+    <FeatureCard
+      tag={t.index.missionCard.tag}
+      title={t.index.missionCard.title}
+      description={t.index.missionCard.description}
+      image="/icons/mission_light.svg"
+    />
+    <FeatureCard
+      tag={t.index.visionCard.tag}
+      title={t.index.visionCard.title}
+      description={t.index.visionCard.description}
+      image="/icons/vision_light.svg"
+    />
+  </div>
 </Layout>
