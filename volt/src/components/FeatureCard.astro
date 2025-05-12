@@ -25,8 +25,13 @@ const { tag, title, description, image, values } = Astro.props;
 
   {
     image && (
-      <div class="mt-8">
-        <img src={image} alt={title} class="h-32 mx-auto object-contain" />
+      <div class="mt-8 relative h-32">
+        <img src={image} alt={title} class="h-32 mx-auto object-contain block dark:hidden" />
+        <img
+          src={image.replace('_light', '_dark')}
+          alt={title}
+          class="h-32 mx-auto object-contain hidden dark:block absolute top-0 left-1/2 -translate-x-1/2"
+        />
       </div>
     )
   }
