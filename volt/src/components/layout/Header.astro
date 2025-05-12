@@ -1,6 +1,5 @@
 ---
-import logo from '../../public/logo_2.svg';
-import ThemeToggle from './ThemeToggle';
+import ThemeToggle from '../ThemeToggle';
 
 const currentPath = Astro.url.pathname;
 ---
@@ -11,7 +10,7 @@ const currentPath = Astro.url.pathname;
   <!-- Desktop Header -->
   <div class="hidden md:flex container mx-auto px-4 justify-between items-center">
     <a href="/">
-      <img src={logo.src} alt="Logo de Volt Solar Energy" class="h-12 md:h-14" />
+      <img src="" alt="Logo de Volt Solar Energy" class="h-12 md:h-14" />
     </a>
 
     <div class="flex items-center gap-6">
@@ -78,7 +77,7 @@ const currentPath = Astro.url.pathname;
     </button>
 
     <a href="/" class="mx-auto">
-      <img src={logo.src} alt="Logo de Volt Solar Energy" class="h-12" />
+      <img src="" alt="Logo de Volt Solar Energy" class="h-12" />
     </a>
   </div>
 
