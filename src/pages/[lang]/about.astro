@@ -1,19 +1,91 @@
 ---
-import ComingSoon from '../../components/ComingSoon.astro';
 import Layout from '@layouts/Layout.astro';
 import { getTranslation } from '@i18n/index';
+import FeatureCard from '@components/FeatureCard.astro';
+import { Leaf, HeartHandshake, Sparkles } from 'lucide-astro';
 
 const lang = Astro.params.lang;
 const currentLang = lang === 'es' || lang === 'en' ? lang : 'es';
-
-const t = getTranslation(lang as 'es' | 'en');
+const t = getTranslation(currentLang);
 
 export async function getStaticPaths() {
   return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
 }
 ---
 
-<Layout
->
-  <ComingSoon lang={currentLang} t={t} />
+<Layout>
+  <!-- Sección Historia -->
+  <section
+    class="pt-20 md:pb-10 pb-5 px-4 bg-background dark:bg-dark-background transition-colors duration-500 mt-5 md:mt-10"
+    aria-labelledby="history-title"
+  >
+    <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <!-- Imagen (visible primero en mobile) -->
+      <div class="order-2 md:order-2 h-full flex items-center justify-center">
+        <div
+          class="w-96 rounded-[2rem] overflow-hidden shadow-lg border border-line dark:border-dark-line"
+        >
+          <img
+            src="/logos/logo_1.svg"
+            alt="Logo Volt Solar Energy"
+            class="w-full h-full object-contain p-4"
+            loading="lazy"
+          />
+        </div>
+      </div>
+
+      <!-- Texto -->
+      <div class="order-2 md:order-1 flex flex-col justify-center h-full">
+        <h2
+          id="history-title"
+          class="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-dark-text-primary mb-4"
+        >
+          {t.about.history.title}
+        </h2>
+
+        <p class="text-lg italic text-yellow-light dark:text-dark-yellow-light mb-6">
+          {t.about.history.subtitle}
+        </p>
+
+        <p
+          class="text-lg text-text-secondary dark:text-dark-text-secondary leading-relaxed whitespace-pre-line"
+        >
+          {t.about.history.paragraph}
+        </p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Sección Misión, Visión y Valores -->
+  <section class="py-5 md:py-10 px-4 bg-background dark:bg-dark-background">
+    <div class="max-w-6xl mx-auto text-center mb-10">
+      <h2 class="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-dark-text-primary">
+        {t.about.identity.title}
+      </h2>
+    </div>
+
+    <div class="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
+      <FeatureCard
+        tag={t.about.identity.vision.tag}
+        title={t.about.identity.vision.title}
+        description={t.about.identity.vision.description}
+        image="/icons/vision_light.svg"
+      />
+      <FeatureCard
+        tag={t.about.identity.mission.tag}
+        title={t.about.identity.mission.title}
+        description={t.about.identity.mission.description}
+        image="/icons/mission_light.svg"
+      />
+      <FeatureCard
+        tag={t.about.identity.values.tag}
+        title={t.about.identity.values.title}
+        description=""
+        values={t.about.identity.values.items.map((item) => ({
+          icon: '/icons/value.svg',
+          label: item,
+        }))}
+      />
+    </div>
+  </section>
 </Layout>

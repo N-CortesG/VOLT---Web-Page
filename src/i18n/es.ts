@@ -104,6 +104,44 @@ const es = {
       ],
     },
   },
+
+  // 🔽 Sección about
+  about: {
+    history: {
+      title: 'Nuestra historia',
+      subtitle: 'Comprometidos con un futuro sostenible',
+      paragraph: `Volt Solar Energy nace con el propósito de transformar la forma en que hogares y empresas acceden a la energía. 
+  Vimos la necesidad urgente de soluciones sostenibles y decidimos actuar: unir ingeniería, tecnología y conciencia ambiental. 
+  Desde nuestros primeros proyectos, nos enfocamos en ofrecer instalaciones personalizadas, con equipos de calidad y acompañamiento total. 
+  Hoy somos una marca que representa confianza, innovación y compromiso con el planeta.`,
+    },
+    identity: {
+      title: 'Nuestra esencia',
+      mission: {
+        tag: 'MISIÓN',
+        title: 'Impulsamos la energía solar del futuro',
+        description:
+          'Diseñamos e implementamos soluciones de energía solar fotovoltaica para los sectores residencial, comercial e industrial, promoviendo una transición energética sostenible. Nos comprometemos a entregar proyectos innovadores, de alta calidad y a la medida, maximizando el valor para nuestros clientes.',
+      },
+      vision: {
+        tag: 'VISIÓN',
+        title: 'Lideramos la innovación energética en Colombia',
+        description:
+          'Impulsamos la transición hacia un modelo energético sostenible mediante soluciones solares inteligentes, expandiendo nuestra presencia en los sectores residencial, comercial e industrial a nivel nacional.',
+      },
+      values: {
+        tag: 'VALORES',
+        title: 'Lo que nos define',
+        items: [
+          'Compromiso con el medio ambiente',
+          'Excelencia técnica y humana',
+          'Transparencia en cada proyecto',
+          'Innovación continua',
+          'Orientación al cliente',
+        ],
+      },
+    },
+  },
 };
 
 export default es;
