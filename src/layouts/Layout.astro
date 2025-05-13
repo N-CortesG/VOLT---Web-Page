@@ -1,21 +1,24 @@
 ---
+import { getTranslation } from '@i18n/index';
 import ThemeManager from '../scripts/ThemeManager.jsx';
 import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 
+const lang = Astro.params.lang;
+const currentLang = lang === 'es' || lang === 'en' ? lang : 'es';
+
+const t = getTranslation(currentLang);
+
+// Props dinámicos con fallback al SEO por idioma
+const {
+  title = t.seo.title,
+  description = t.seo.description,
+} = Astro.props;
+
 interface Props {
   title?: string;
   description?: string;
-  lang: 'es' | 'en';
-  t: any;
 }
-
-const {
-  title = 'VOLT Solar Energy | Energía Solar Fotovoltaica en Colombia',
-  description = 'Diseño, instalación y mantenimiento de sistemas solares personalizados para hogares, negocios e industrias. Ahorra energía con tecnología verde de última generación.',
-  lang,
-  t,
-} = Astro.props;
 ---
 <!doctype html>
 <html lang={lang} class="scroll-smooth">
@@ -26,7 +29,7 @@ const {
     <!-- SEO Básico -->
     <title>{title}</title>
     <meta name="description" content={description} />
-    <meta name="keywords" content="paneles solares, energía solar, eficiencia energética, fotovoltaica, instalación solar Colombia" />
+    <meta name="keywords" content={t.seo.keywords} />
     <meta name="author" content="VOLT SOLAR ENERGY COLOMBIA" />
     <meta name="robots" content="index, follow" />
 
@@ -34,17 +37,17 @@ const {
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/img/og-image.webp" />
-    <meta property="og:url" content="https://voltsolarcol.com" />
+    <meta property="og:url" content={t.seo.url} />
     <meta property="og:type" content="website" />
-    <meta property="og:locale" content="es_CO" />
-    <meta property="og:site_name" content="VOLT Solar Energy" />
+    <meta property="og:locale" content={t.seo.locale} />
+    <meta property="og:site_name" content={t.seo.ogSiteName} />
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content={title} />
     <meta name="twitter:description" content={description} />
     <meta name="twitter:image" content="/img/og-image.webp" />
-    <meta name="twitter:site" content="@volt_solar" />
+    <meta name="twitter:site" content={t.seo.twitterHandle} />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
@@ -58,7 +61,7 @@ const {
     <ThemeManager client:only="react" />
 
     <!-- Encabezado -->
-    <Header lang={lang} t={t} />
+    <Header lang={currentLang} t={t} />
 
     <!-- Contenido principal -->
     <main id="main-content" class="flex-1 mt-0">
@@ -66,6 +69,6 @@ const {
     </main>
 
     <!-- Pie de página -->
-    <Footer lang={lang} t={t} />
+    <Footer lang={currentLang} t={t} />
   </body>
 </html>

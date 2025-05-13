@@ -5,43 +5,75 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        // Light Mode
+        // Modo Claro
         background: {
-          DEFAULT: '#FFFFFF', // Fondo Principal
-          secondary: '#F5F5F5', // Fondo Secundario
+          DEFAULT: '#FFFFFF',
+          secondary: '#F5F5F5',
+          tertiary: '#E8F5E9', // Verde muy claro de fondo suave
         },
         green: {
-          light: '#4CAF50', // Verde Naturaleza
-          dark: '#2E7D32', // Verde Oscuro
+          light: '#4CAF50',
+          dark: '#2E7D32',
+          emerald: '#66BB6A', // tono intermedio brillante
+          lime: '#AED581', // más amable, para hover o badges
         },
         yellow: {
-          light: '#FFA000', // Amarillo Solar
+          light: '#FFA000',
+          gold: '#FFD54F', // dorado solar suave
+        },
+        orange: {
+          soft: '#FFB74D', // cálido pero profesional
+          deep: '#F57C00', // para botones primarios o CTA
+        },
+        blue: {
+          sky: '#81D4FA', // energía limpia y tecnología
+          slate: '#607D8B', // profesionalismo, confiabilidad
         },
         text: {
-          primary: '#212121', // Texto Principal
-          secondary: '#757575', // Texto Secundario
+          primary: '#212121',
+          secondary: '#757575',
+          light: '#9E9E9E',
+        },
+        copper: {
+          DEFAULT: '#B87333', // acento cálido opcional
         },
         line: {
-          DEFAULT: '#E0E0E0', // Líneas y Bordes
+          DEFAULT: '#E0E0E0',
         },
 
-        // Dark Mode
+        // Modo Oscuro
         dark: {
-          background: '#121212', // Fondo Principal (oscuro)
-          secondary: '#1E1E1E', // Fondo Secundario (oscuro)
+          background: '#121212',
+          secondary: '#1E1E1E',
+          tertiary: '#263238',
           green: {
-            light: '#66BB6A', // Verde Naturaleza (modo oscuro)
-            dark: '#1B5E20', // Verde Oscuro (modo oscuro)
+            light: '#66BB6A',
+            dark: '#1B5E20',
+            emerald: '#43A047',
+            lime: '#8BC34A',
           },
           yellow: {
-            light: '#FFCA28', // Amarillo Solar (modo oscuro)
+            light: '#FFCA28',
+            gold: '#FFD54F',
+          },
+          orange: {
+            soft: '#FF9800',
+            deep: '#EF6C00',
+          },
+          blue: {
+            sky: '#4FC3F7',
+            slate: '#455A64',
+          },
+          copper: {
+            DEFAULT: '#A0522D',
           },
           text: {
-            primary: '#FFFFFF', // Texto Principal (blanco)
-            secondary: '#BDBDBD', // Texto Secundario (gris claro)
+            primary: '#FFFFFF',
+            secondary: '#BDBDBD',
+            light: '#9E9E9E',
           },
           line: {
-            DEFAULT: '#424242', // Líneas y Bordes (modo oscuro)
+            DEFAULT: '#424242',
           },
         },
       },
