@@ -37,10 +37,9 @@ const en = {
   // 🔽 Sección index (página principal)
   index: {
     hero: {
-      title: 'Custom Solar Energy for Homes and Businesses',
-      subtitle:
-        'We install efficient and sustainable solar solutions tailored to you. Start saving from day one.',
-      cta: 'Get your solar quote',
+      title: 'Solar energy made for you',
+      subtitle: 'Save more with clean, smart, and custom solutions.',
+      cta: 'Get a quote',
     },
     benefits: {
       title: 'Why Choose Volt Solar Energy?',
@@ -71,12 +70,32 @@ const en = {
         {
           name: 'Juan Rodríguez',
           feedback:
-            'I installed my solar system with Volt a year ago and my bill dropped to less than 10%. Great service and support.',
+            'I noticed the difference right away. The installation was quick and the team was very attentive throughout.',
         },
         {
           name: 'Laura Méndez',
           feedback:
-            'Very professional. They helped me throughout the whole process and I’m already seeing the savings. Thank you, Volt!',
+            'Excellent service. They explained every detail and now I fully understand how to use solar energy efficiently.',
+        },
+        {
+          name: 'Carlos Torres',
+          feedback:
+            'The savings are real and noticeable. I recommend Volt to anyone looking for a professional and effective solution.',
+        },
+        {
+          name: 'Andrea Salazar',
+          feedback:
+            'The whole process was clear and transparent. They gained my trust from the first contact.',
+        },
+        {
+          name: 'Felipe Castro',
+          feedback:
+            'They helped me understand my energy usage and designed the perfect solution for my home.',
+        },
+        {
+          name: 'Natalia López',
+          feedback:
+            'What I liked most was the guidance. They were always available to answer my questions.',
         },
       ],
     },

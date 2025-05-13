@@ -4,6 +4,7 @@ import Layout from '@layouts/Layout.astro';
 import { getTranslation } from '@i18n/index';
 import BenefitsGrid from '@components/BenefitsGrid.astro';
 import { Sun, Laptop, Smartphone, ShieldCheck } from 'lucide-astro';
+import Testimonials from '@components/Testimonials.astro';
 
 // Idioma
 const lang = Astro.params.lang;
@@ -51,4 +52,8 @@ export async function getStaticPaths() {
   ]}
 />
   
+<Testimonials
+  title={t.index.testimonials.title}
+  items={t.index.testimonials.items}
+/>
 </Layout>

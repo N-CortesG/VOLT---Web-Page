@@ -41,6 +41,18 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
         </li>
         <li>
           <a
+            href={`/${lang}/about`}
+            class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
+              pathWithoutLang.startsWith('/about')
+                ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
+                : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
+            }`}
+          >
+            {t.header.about}
+          </a>
+        </li>
+        <li>
+          <a
             href={`/${lang}/services`}
             class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
               pathWithoutLang.startsWith('/services')
@@ -66,7 +78,7 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
       </ul>
     </nav>
 
-    <div class="flex items-center gap-4 ml-6">
+    <div class="flex items-center gap-2 ml-6">
       <a
         href={socialLinks.whatsapp}
         class="px-4 py-2 bg-green-dark hover:bg-green-light dark:bg-dark-green-light dark:hover:bg-dark-green-dark text-white rounded-md font-semibold transition-colors duration-300 inline-flex items-center gap-2"

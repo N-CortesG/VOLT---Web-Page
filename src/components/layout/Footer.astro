@@ -32,10 +32,10 @@ const { lang, t } = Astro.props;
         {t.footer.linksTitle}
       </h3>
       <ul class="space-y-1">
-        <li><a href={`/${lang}`} class="hover:underline">{t.header.about}</a></li>
+        <li><a href={`/${lang}`} class="hover:underline">{t.header.home}</a></li>
+        <li><a href={`/${lang}/about`} class="hover:underline">{t.header.about}</a></li>
         <li><a href={`/${lang}/services`} class="hover:underline">{t.header.services}</a></li>
         <li><a href={`/${lang}/contact`} class="hover:underline">{t.header.contact}</a></li>
-        <li><a href={`/${lang}/contact#cotiza`} class="hover:underline">{t.footer.quoteNow}</a></li>
       </ul>
     </nav>
 

@@ -35,6 +35,18 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
       </li>
       <li>
         <a
+          href={`/${lang}/about`}
+          class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
+            pathWithoutLang.startsWith('/about`')
+              ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
+              : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
+          }`}
+        >
+          {t.header.about}
+        </a>
+      </li>
+      <li>
+        <a
           href={`/${lang}/services`}
           onclick="closeMenu()"
           class={`block px-4 py-3 rounded-md font-medium transition-colors duration-300 ${

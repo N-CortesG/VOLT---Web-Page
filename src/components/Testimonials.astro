@@ -1,0 +1,88 @@
+---
+export interface Props {
+  title: string;
+  items: {
+    name: string;
+    feedback: string;
+  }[];
+}
+
+const { title, items } = Astro.props;
+---
+
+<section class="py-16 px-4 bg-background dark:bg-dark-background relative overflow-hidden" aria-labelledby="testimonials-title">
+    <div class="max-w-6xl mx-auto text-center">
+      <h2
+        id="testimonials-title"
+        class="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-dark-text-primary mb-12"
+      >
+        {title}
+      </h2>
+  
+      <div class="relative">
+        <!-- Fade desktop -->
+        <div class="hidden md:block absolute inset-y-0 left-0 w-16 z-10 bg-gradient-to-r from-background dark:from-dark-background to-transparent pointer-events-none"></div>
+        <div class="hidden md:block absolute inset-y-0 right-0 w-16 z-10 bg-gradient-to-l from-background dark:from-dark-background to-transparent pointer-events-none"></div>
+  
+        <!-- Fade mobile -->
+        <div class="block md:hidden absolute inset-y-0 left-0 w-8 z-10 bg-gradient-to-r from-background dark:from-dark-background to-transparent pointer-events-none"></div>
+        <div class="block md:hidden absolute inset-y-0 right-0 w-8 z-10 bg-gradient-to-l from-background dark:from-dark-background to-transparent pointer-events-none"></div>
+  
+        <!-- Scrollable container -->
+        <div class="relative overflow-x-auto scroll-smooth scrollbar-responsive">
+          <div
+            class="flex gap-6 w-max px-4 md:px-8 snap-x snap-mandatory"
+            role="list"
+          >
+            {items.map((item, index) => (
+              <figure
+                class="snap-start w-[85vw] sm:w-[60vw] md:w-[380px] lg:w-[400px] bg-background-secondary dark:bg-dark-secondary p-6 rounded-2xl shadow-md border-l-4 border-green-light dark:border-dark-green-light text-left transition-shadow duration-300 hover:shadow-lg flex-shrink-0"
+              >
+                <blockquote class="text-lg text-text-secondary dark:text-dark-text-secondary italic mb-4">
+                  “{item.feedback}”
+                </blockquote>
+                <figcaption class="text-sm font-semibold text-text-primary dark:text-dark-text-primary">
+                  {item.name}
+                </figcaption>
+              </figure>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>    
+
+<style>
+    /* Oculta scrollbar en mobile */
+    @media (max-width: 767px) {
+      .scrollbar-responsive::-webkit-scrollbar {
+        display: none;
+      }
+  
+      .scrollbar-responsive {
+        -ms-overflow-style: none; /* IE/Edge */
+        scrollbar-width: none;     /* Firefox */
+      }
+    }
+  
+    /* Muestra scrollbar en desktop */
+    @media (min-width: 768px) {
+      .scrollbar-responsive::-webkit-scrollbar {
+        height: 8px;
+      }
+  
+      .scrollbar-responsive::-webkit-scrollbar-track {
+        background: transparent;
+      }
+  
+      .scrollbar-responsive::-webkit-scrollbar-thumb {
+        background-color: #66BB6A; /* Verde claro de la marca */
+        border-radius: 4px;
+      }
+  
+      .scrollbar-responsive {
+        scrollbar-color: #66BB6A transparent; /* Firefox */
+        scrollbar-width: thin;
+      }
+    }
+  </style>

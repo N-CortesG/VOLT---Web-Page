@@ -39,10 +39,9 @@ const es = {
   // 🔽 Sección index (página principal)
   index: {
     hero: {
-      title: 'Energía solar personalizada para hogares y empresas',
-      subtitle:
-        'Instalamos soluciones solares eficientes, sostenibles y a tu medida. Ahorra desde el primer día.',
-      cta: 'Cotiza tu sistema solar',
+      title: 'Energía solar a tu medida',
+      subtitle: 'Ahorra con soluciones limpias, eficientes y personalizadas.',
+      cta: 'Cotiza ahora',
     },
     benefits: {
       title: '¿Por qué elegir Volt Solar Energy?',
@@ -75,12 +74,32 @@ const es = {
         {
           name: 'Juan Rodríguez',
           feedback:
-            'Instalé el sistema solar con Volt hace un año y mi factura bajó a menos del 10%. Excelente atención y seguimiento.',
+            'Desde el primer día noté la diferencia. La instalación fue rápida y el equipo estuvo muy atento en todo momento.',
         },
         {
           name: 'Laura Méndez',
           feedback:
-            'Muy profesionales. Me acompañaron en todo el proceso y ya estoy viendo los ahorros. ¡Gracias Volt!',
+            'Excelente servicio. Me explicaron cada detalle y ahora entiendo perfectamente cómo aprovechar la energía solar.',
+        },
+        {
+          name: 'Carlos Torres',
+          feedback:
+            'El ahorro es real y visible. Recomiendo Volt a quienes buscan una solución profesional y eficiente.',
+        },
+        {
+          name: 'Andrea Salazar',
+          feedback:
+            'Todo el proceso fue claro y transparente. Me dieron confianza desde el primer contacto.',
+        },
+        {
+          name: 'Felipe Castro',
+          feedback:
+            'Me ayudaron a entender mi consumo energético y diseñaron una solución perfecta para mi hogar.',
+        },
+        {
+          name: 'Natalia López',
+          feedback:
+            'Lo que más me gustó fue el acompañamiento. Siempre estuvieron disponibles para resolver mis dudas.',
         },
       ],
     },
