@@ -17,8 +17,8 @@ const toEN = `/en${pathWithoutLang}`;
     onclick="localStorage.setItem('preferredLang', 'es')"
     class={`px-4 py-1 text-sm font-medium transition-colors duration-200 ${
       lang === 'es'
-        ? 'bg-green-dark text-white dark:bg-dark-green-dark'
-        : 'bg-background text-text-primary dark:bg-dark-background dark:text-dark-text-primary hover:bg-green-light/10 dark:hover:bg-dark-green-light/10'
+        ? 'bg-green-dark hover:bg-green-light dark:bg-dark-green-light dark:hover:bg-dark-green-dark'
+        : 'text-text-primary dark:text-dark-text-primary hover:bg-green-light/10 dark:hover:bg-dark-green-light/10'
     }`}
   >
     ES
@@ -30,8 +30,8 @@ const toEN = `/en${pathWithoutLang}`;
     onclick="localStorage.setItem('preferredLang', 'en')"
     class={`px-4 py-1 text-sm font-medium transition-colors duration-200 ${
       lang === 'en'
-        ? 'bg-green-dark text-white dark:bg-dark-green-dark'
-        : 'bg-background text-text-primary dark:bg-dark-background dark:text-dark-text-primary hover:bg-green-light/10 dark:hover:bg-dark-green-light/10'
+        ? 'bg-green-dark hover:bg-green-light dark:bg-dark-green-light dark:hover:bg-dark-green-dark'
+        : 'text-text-primary dark:text-dark-text-primary hover:bg-green-light/10 dark:hover:bg-dark-green-light/10'
     }`}
   >
     EN
