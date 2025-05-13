@@ -2,11 +2,12 @@
 import Layout from '@layouts/Layout.astro';
 import { getTranslation } from '@i18n/index';
 import FeatureCard from '@components/FeatureCard.astro';
-import { Leaf, HeartHandshake, Sparkles } from 'lucide-astro';
+import { Leaf, HeartHandshake, Sparkles, Wrench, Globe, Rocket, Eye } from 'lucide-astro';
 
 const lang = Astro.params.lang;
 const currentLang = lang === 'es' || lang === 'en' ? lang : 'es';
 const t = getTranslation(currentLang);
+const valueIcons = [Leaf, HeartHandshake, Sparkles, HeartHandshake, Leaf];
 
 export async function getStaticPaths() {
   return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
@@ -16,7 +17,7 @@ export async function getStaticPaths() {
 <Layout>
   <!-- Sección Historia -->
   <section
-    class="pt-20 md:pb-10 pb-5 px-4 bg-background dark:bg-dark-background transition-colors duration-500 mt-5 md:mt-10"
+    class="pt-20 md:pb-10 pb-5 px-4 bg-background-secondary dark:bg-dark-secondary transition-colors duration-500 mt-5 md:mt-10"
     aria-labelledby="history-title"
   >
     <div class="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-center">
@@ -66,24 +67,24 @@ export async function getStaticPaths() {
 
     <div class="grid gap-8 md:grid-cols-3 max-w-6xl mx-auto">
       <FeatureCard
-        tag={t.about.identity.vision.tag}
-        title={t.about.identity.vision.title}
-        description={t.about.identity.vision.description}
-        image="/icons/vision_light.svg"
-      />
-      <FeatureCard
         tag={t.about.identity.mission.tag}
         title={t.about.identity.mission.title}
         description={t.about.identity.mission.description}
-        image="/icons/mission_light.svg"
       />
+
+      <FeatureCard
+        tag={t.about.identity.vision.tag}
+        title={t.about.identity.vision.title}
+        description={t.about.identity.vision.description}
+      />
+
       <FeatureCard
         tag={t.about.identity.values.tag}
         title={t.about.identity.values.title}
         description=""
-        values={t.about.identity.values.items.map((item) => ({
-          icon: '/icons/value.svg',
-          label: item,
+        values={t.about.identity.values.items.map((label, index) => ({
+          icon: valueIcons[index],
+          label,
         }))}
       />
     </div>
