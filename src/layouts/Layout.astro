@@ -4,41 +4,53 @@ import Header from '../components/layout/Header.astro';
 import Footer from '../components/layout/Footer.astro';
 
 interface Props {
-  title: string;
+  title?: string;
   description?: string;
   lang: 'es' | 'en';
   t: any;
 }
 
-const { title, description = '', lang, t } = Astro.props;
+const {
+  title = 'VOLT Solar Energy | Energía Solar Fotovoltaica en Colombia',
+  description = 'Diseño, instalación y mantenimiento de sistemas solares personalizados para hogares, negocios e industrias. Ahorra energía con tecnología verde de última generación.',
+  lang,
+  t,
+} = Astro.props;
 ---
-
 <!doctype html>
 <html lang={lang} class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!-- SEO básico -->
+    <!-- SEO Básico -->
     <title>{title}</title>
     <meta name="description" content={description} />
+    <meta name="keywords" content="paneles solares, energía solar, eficiencia energética, fotovoltaica, instalación solar Colombia" />
     <meta name="author" content="VOLT SOLAR ENERGY COLOMBIA" />
     <meta name="robots" content="index, follow" />
 
-    <!-- Open Graph -->
+    <!-- Open Graph / Facebook -->
     <meta property="og:title" content={title} />
     <meta property="og:description" content={description} />
     <meta property="og:image" content="/img/og-image.webp" />
+    <meta property="og:url" content="https://voltsolarcol.com" />
     <meta property="og:type" content="website" />
     <meta property="og:locale" content="es_CO" />
-    <meta property="og:site_name" content="Volt Solar" />
+    <meta property="og:site_name" content="VOLT Solar Energy" />
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content="/img/og-image.webp" />
+    <meta name="twitter:site" content="@volt_solar" />
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <link rel="alternate icon" href="/favicon.ico" />
-    
+  </head>
 
-    <!-- Transiciones de página -->
   <body
     class="flex flex-col min-h-screen bg-background-secondary text-text-primary dark:bg-dark-secondary dark:text-dark-text-primary"
   >
