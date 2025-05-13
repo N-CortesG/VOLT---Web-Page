@@ -13,9 +13,6 @@ export async function getStaticPaths() {
 }
 ---
 
-<Layout
-  title="Servicios"
-  description="Volt Solar Colombia: energía solar inteligente, sostenible y eficiente en todo el país."
->
+<Layout title={`VOLT Solar Energy | ${t.header.services}`}>
   <ComingSoon lang={currentLang} t={t} />
 </Layout>
