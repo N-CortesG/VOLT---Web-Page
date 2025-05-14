@@ -1,7 +1,7 @@
 // src/data/socialLinks.ts
 
 const socialLinks = {
-  facebook: 'https://facebook.com/voltsolarenergy',
+  facebook: '',
   instagram: 'https://www.instagram.com/voltsolarenergy_col/',
   linkedin: 'http://www.linkedin.com/in/volt-solar-energy-26b440365',
   whatsapp: 'https://wa.me/573225309005',

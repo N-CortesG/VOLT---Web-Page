@@ -1,0 +1,21 @@
+---
+const lang = Astro.params.lang;
+const currentLang = lang === 'es' || lang === 'en' ? lang : 'es';
+
+export async function getStaticPaths() {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
+}
+---
+
+<!doctype html>
+<html lang={currentLang}>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Redirecting...</title>
+    <script>
+      const lang = navigator.language?.startsWith('es') ? 'es' : 'en';
+      window.location.replace(`/${lang}/404`);
+    </script>
+  </head>
+  <body></body>
+</html>

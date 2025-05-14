@@ -34,6 +34,14 @@ const en = {
     buttonText: 'Back to home',
   },
 
+  // 🔽 Sección Not Found 404
+  notFound: {
+    title: 'Page not found',
+    description:
+      'Sorry, the page you are looking for doesn’t exist or has been moved. But don’t worry, you can still explore our site and discover how to transform your world with solar energy.',
+    cta: 'Return to homepage',
+  },
+
   // 🔽 Sección index (página principal)
   index: {
     hero: {
@@ -46,7 +54,7 @@ const en = {
       items: [
         {
           title: 'Guaranteed Savings',
-          description: 'Cut your electricity bill by up to 90% with next-gen solar technology.',
+          description: 'Cut your electricity bill by up to 100% with next-gen solar technology.',
         },
         {
           title: 'Tailored Solutions',
@@ -104,12 +112,12 @@ const en = {
   // 🔽 Sección about
   about: {
     history: {
-      title: 'Our Story',
-      subtitle: 'A commitment to a sustainable future',
-      paragraph: `Volt Solar Energy was born to transform the way homes and businesses access energy.
-  We saw the urgent need for sustainable solutions and decided to act: merging engineering, technology, and environmental awareness.
-  From our earliest projects, we focused on personalized installations, quality equipment, and complete support.
-  Today, we’re a brand that stands for trust, innovation, and commitment to the planet.`,
+      title: 'Our History',
+      subtitle: 'Committed to a sustainable future',
+      paragraph: `Volt Solar Energy was born with the purpose of transforming the way homes and businesses access energy.
+    We identified the urgent need for sustainable solutions and decided to act by uniting engineering, technology, and environmental awareness.
+    From our very first projects, we focused on delivering customized installations with high-quality equipment and continuous support.
+    Today, we are a brand that stands for trust, innovation, and commitment to the planet.`,
     },
     identity: {
       title: 'Our Essence',

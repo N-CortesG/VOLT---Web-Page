@@ -36,6 +36,14 @@ const es = {
     buttonText: 'Volver al inicio',
   },
 
+  // 🔽 Sección Not Found 404
+  notFound: {
+    title: 'Página no encontrada',
+    description:
+      'Lo sentimos, la página que estás buscando no existe o fue movida. Pero no te preocupes, aún puedes explorar nuestro sitio y descubrir cómo transformar tu mundo con energía solar.',
+    cta: 'Volver al inicio',
+  },
+
   // 🔽 Sección index (página principal)
   index: {
     hero: {
@@ -49,7 +57,7 @@ const es = {
         {
           title: 'Ahorro garantizado',
           description:
-            'Reduce tu factura eléctrica hasta en un 90% con energía solar de última generación.',
+            'Reduce tu factura eléctrica hasta en un 100% con energía solar de última generación.',
         },
         {
           title: 'Soluciones a medida',
@@ -110,9 +118,9 @@ const es = {
     history: {
       title: 'Nuestra historia',
       subtitle: 'Comprometidos con un futuro sostenible',
-      paragraph: `Volt Solar Energy nace con el propósito de transformar la forma en que hogares y empresas acceden a la energía. 
-  Vimos la necesidad urgente de soluciones sostenibles y decidimos actuar: unir ingeniería, tecnología y conciencia ambiental. 
-  Desde nuestros primeros proyectos, nos enfocamos en ofrecer instalaciones personalizadas, con equipos de calidad y acompañamiento total. 
+      paragraph: `Volt Solar Energy nace con el propósito de transformar la manera en que hogares y empresas acceden a la energía. 
+  Identificamos la necesidad urgente de soluciones sostenibles y decidimos actuar: unir ingeniería, tecnología y conciencia ambiental. 
+  Desde nuestros primeros proyectos, nos enfocamos en ofrecer instalaciones personalizadas, con equipos de calidad y acompañamiento en todo momento. 
   Hoy somos una marca que representa confianza, innovación y compromiso con el planeta.`,
     },
     identity: {
