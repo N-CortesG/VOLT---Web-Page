@@ -1,6 +1,9 @@
 ---
+import { getTranslation } from '@i18n/index';
+
 const lang = Astro.params.lang;
-const currentLang = lang === 'es' || lang === 'en' ? lang : 'es';
+const currentLang = lang === 'en' || lang === 'es' ? lang : 'en';
+const t = getTranslation(currentLang);
 
 export async function getStaticPaths() {
   return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
@@ -11,11 +14,56 @@ export async function getStaticPaths() {
 <html lang={currentLang}>
   <head>
     <meta charset="UTF-8" />
-    <title>Redirecting...</title>
-    <script>
-      const lang = navigator.language?.startsWith('es') ? 'es' : 'en';
-      window.location.replace(`/${lang}/404`);
-    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{t.notFound.title} | Volt Solar Energy</title>
+    <style>
+      body {
+        margin: 0;
+        font-family: system-ui, sans-serif;
+        background-color: #ffffff;
+        color: #1a1a1a;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 100vh;
+        padding: 2rem;
+        text-align: center;
+      }
+      h1 {
+        font-size: 5rem;
+        color: #15803d; /* verde oscuro */
+        margin-bottom: 1rem;
+      }
+      h2 {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+      }
+      p {
+        max-width: 600px;
+        margin-bottom: 2rem;
+        color: #555;
+        line-height: 1.5;
+      }
+      a {
+        display: inline-block;
+        background-color: #15803d;
+        color: #fff;
+        padding: 0.75rem 1.5rem;
+        border-radius: 0.5rem;
+        font-weight: 600;
+        text-decoration: none;
+        transition: background-color 0.3s ease;
+      }
+      a:hover {
+        background-color: #166534;
+      }
+    </style>
   </head>
-  <body></body>
+  <body>
+    <h1>404</h1>
+    <h2>{t.notFound.title}</h2>
+    <p>{t.notFound.description}</p>
+    <a href={`/${currentLang}`}>{t.notFound.cta}</a>
+  </body>
 </html>
