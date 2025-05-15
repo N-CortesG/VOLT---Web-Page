@@ -1,0 +1,18 @@
+---
+import Layout from '@layouts/Layout.astro';
+import { getTranslation } from '@i18n/index';
+import ComingSoon from '@components/ComingSoon.astro';
+
+const lang = Astro.params.lang;
+const currentLang = lang === 'es' || lang === 'en' ? lang : 'es';
+
+const t = getTranslation(lang as 'es' | 'en');
+
+export async function getStaticPaths() {
+  return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
+}
+---
+
+<Layout title={`VOLT Solar Energy | ${t.header.faq}`}>
+  <ComingSoon lang={currentLang} t={getTranslation(currentLang)} />
+</Layout>

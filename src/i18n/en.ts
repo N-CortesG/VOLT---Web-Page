@@ -1,3 +1,7 @@
+import { Projector } from 'lucide-astro';
+import Faq from 'src/pages/[lang]/faq.astro';
+import Projects from 'src/pages/[lang]/projects.astro';
+
 const en = {
   seo: {
     title: 'VOLT Solar Energy | Photovoltaic Solar Energy in Colombia',
@@ -15,7 +19,11 @@ const en = {
     about: 'About Us',
     services: 'Services',
     contact: 'Contact',
-    whatsapp: 'Whatsapp',
+    projects: 'Projects',
+    blog: 'Blog',
+    faq: 'FAQ',
+    terms: 'Terms and Conditions',
+    privacy: 'Privacy Policy',
   },
   footer: {
     linksTitle: 'Links',

@@ -1,4 +1,5 @@
 import { Home } from 'lucide-astro';
+import Faq from 'src/pages/[lang]/faq.astro';
 
 const es = {
   seo: {
@@ -17,7 +18,11 @@ const es = {
     about: 'Sobre Nosotros',
     services: 'Servicios',
     contact: 'Contacto',
-    whatsapp: 'Whatsapp',
+    projects: 'Proyectos',
+    blog: 'Blog',
+    faq: 'Preguntas Frecuentes',
+    terms: 'Términos y Condiciones',
+    privacy: 'Política de Privacidad',
   },
   footer: {
     linksTitle: 'Enlaces',
