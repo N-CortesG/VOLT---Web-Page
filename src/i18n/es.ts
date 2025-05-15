@@ -181,6 +181,68 @@ const es = {
       tagline: 'Más que energía solar, una forma de cambiar tu vida.',
     },
   },
+
+  // 🔽 Sección services
+
+  services: {
+    title: 'Nuestros servicios',
+    subtitle: 'Soluciones solares integrales para hogares, negocios e industrias.',
+    list: [
+      {
+        title: 'Instalación de paneles solares',
+        description:
+          'Realizamos instalaciones profesionales y seguras de sistemas solares fotovoltaicos, adaptados a tu espacio, consumo y necesidades energéticas.',
+      },
+      {
+        title: 'Asesoría en eficiencia energética',
+        description:
+          'Te ayudamos a entender y optimizar tu consumo eléctrico mediante análisis, diagnóstico técnico y recomendaciones personalizadas.',
+      },
+      {
+        title: 'Diseño personalizado',
+        description:
+          'Cada proyecto se diseña a medida, combinando ingeniería, automatización y normativa local para maximizar el rendimiento del sistema.',
+      },
+      {
+        title: 'Mantenimiento de SSFV',
+        description:
+          'Ofrecemos planes de mantenimiento preventivo y correctivo para asegurar el funcionamiento óptimo, seguro y duradero del sistema solar.',
+      },
+      {
+        title: 'Equipos certificados',
+        description:
+          'Trabajamos con tecnología de alta calidad y certificación TIER 1: Huawei, Solis, Growatt, Trina Solar, JA Solar, entre otros.',
+      },
+    ],
+    whyChooseUs: {
+      badge: '¡Por qué elegirnos!',
+      title: 'Sistemas solares comerciales y residenciales completos',
+      description:
+        'Nuestro equipo altamente capacitado y dedicado trabaja incansablemente para ofrecer soluciones innovadoras que superen las expectativas de nuestros clientes. Valoramos la transparencia y la comunicación abierta en cada etapa del proceso, asegurando una colaboración efectiva y resultados excepcionales.',
+      benefits: [
+        {
+          label: 'Calidad',
+          value: 'Servicio',
+          icon: 'Check',
+        },
+        {
+          label: 'Expertos',
+          value: 'Ingenieros',
+          icon: 'Users2',
+        },
+        {
+          label: 'Gratis',
+          value: 'Consulta',
+          icon: 'Handshake',
+        },
+        {
+          label: 'Cliente',
+          value: 'Apoyo',
+          icon: 'Headphones',
+        },
+      ],
+    },
+  },
 };
 
 export default es;

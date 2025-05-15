@@ -10,16 +10,14 @@ const currentLang = lang === 'es' || lang === 'en' ? lang : 'es';
 const t = getTranslation(currentLang);
 
 // Props dinámicos con fallback al SEO por idioma
-const {
-  title = t.seo.title,
-  description = t.seo.description,
-} = Astro.props;
+const { title = t.seo.title, description = t.seo.description } = Astro.props;
 
 interface Props {
   title?: string;
   description?: string;
 }
 ---
+
 <!doctype html>
 <html lang={lang} class="scroll-smooth">
   <head>

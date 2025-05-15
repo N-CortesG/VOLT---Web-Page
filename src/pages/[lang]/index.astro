@@ -27,33 +27,31 @@ export async function getStaticPaths() {
     t={t}
   />
   <BenefitsGrid
-  title={t.index.benefits.title}
-  items={[
-    {
-      icon: Sun,
-      title: t.index.benefits.items[0].title,
-      description: t.index.benefits.items[0].description,
-    },
-    {
-      icon: Laptop,
-      title: t.index.benefits.items[1].title,
-      description: t.index.benefits.items[1].description,
-    },
-    {
-      icon: Smartphone,
-      title: t.index.benefits.items[2].title,
-      description: t.index.benefits.items[2].description,
-    },
-    {
-      icon: ShieldCheck,
-      title: t.index.benefits.items[3].title,
-      description: t.index.benefits.items[3].description,
-    },
-  ]}
-/>
-  
-<Testimonials
-  title={t.index.testimonials.title}
-  items={t.index.testimonials.items}
-/>
+    title={t.index.benefits.title}
+    items={[
+      {
+        icon: Sun,
+        title: t.index.benefits.items[0].title,
+        description: t.index.benefits.items[0].description,
+      },
+      {
+        icon: Laptop,
+        title: t.index.benefits.items[1].title,
+        description: t.index.benefits.items[1].description,
+      },
+      {
+        icon: Smartphone,
+        title: t.index.benefits.items[2].title,
+        description: t.index.benefits.items[2].description,
+      },
+      {
+        icon: ShieldCheck,
+        title: t.index.benefits.items[3].title,
+        description: t.index.benefits.items[3].description,
+      },
+    ]}
+  />
+
+  <Testimonials title={t.index.testimonials.title} items={t.index.testimonials.items} />
+  <div class="py-5"></div>
 </Layout>

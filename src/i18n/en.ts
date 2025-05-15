@@ -177,6 +177,67 @@ const en = {
       tagline: 'More than solar energy, a way to change your life.',
     },
   },
+
+  // 🔽 Sección services
+  services: {
+    title: 'Our Services',
+    subtitle: 'Comprehensive solar solutions for homes, businesses, and industries.',
+    list: [
+      {
+        title: 'Solar Panel Installation',
+        description:
+          'We deliver professional and safe solar system installations tailored to your space, energy usage, and power needs.',
+      },
+      {
+        title: 'Energy Efficiency Consulting',
+        description:
+          'We help you understand and optimize your electricity use through analysis, technical diagnostics, and personalized recommendations.',
+      },
+      {
+        title: 'Custom System Design',
+        description:
+          'Every project is uniquely engineered to meet your requirements, combining automation and regulatory standards to ensure optimal performance.',
+      },
+      {
+        title: 'Solar System Maintenance',
+        description:
+          'We offer preventive and corrective maintenance plans to ensure safe, efficient, and long-lasting solar system performance.',
+      },
+      {
+        title: 'Certified Equipment',
+        description:
+          'We work with TIER 1 certified technology: Huawei, Solis, Growatt, Trina Solar, JA Solar, among others.',
+      },
+    ],
+    whyChooseUs: {
+      badge: 'Why Choose Us!',
+      title: 'Complete solar systems for homes and businesses',
+      description:
+        'Our highly trained and dedicated team works tirelessly to deliver innovative solutions that exceed client expectations. We value transparency and open communication at every stage, ensuring effective collaboration and outstanding results.',
+      benefits: [
+        {
+          label: 'Quality',
+          value: 'Service',
+          icon: 'Check',
+        },
+        {
+          label: 'Experts',
+          value: 'Engineers',
+          icon: 'Users2',
+        },
+        {
+          label: 'Free',
+          value: 'Consultation',
+          icon: 'Handshake',
+        },
+        {
+          label: 'Client',
+          value: 'Support',
+          icon: 'Headphones',
+        },
+      ],
+    },
+  },
 };
 
 export default en;

@@ -1,7 +1,19 @@
 ---
-import ComingSoon from '../../components/ComingSoon.astro';
 import Layout from '@layouts/Layout.astro';
 import { getTranslation } from '@i18n/index';
+import Hero from '@components/Hero.astro';
+import ServiceCard from '@components/ServiceCard.astro';
+import {
+  Award,
+  Bolt,
+  Ruler,
+  ShieldCheck,
+  Wrench,
+  Check,
+  Users2,
+  Headphones,
+  Handshake,
+} from 'lucide-astro';
 
 const lang = Astro.params.lang;
 const currentLang = lang === 'es' || lang === 'en' ? lang : 'es';
@@ -11,8 +23,89 @@ const t = getTranslation(lang as 'es' | 'en');
 export async function getStaticPaths() {
   return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
 }
+
+const icons = [Bolt, Ruler, Wrench, ShieldCheck, Award];
+const images = [
+  '/img/servicio1.png',
+  '/img/servicio2.png',
+  '/img/servicio3.png',
+  '/img/servicio4.png',
+  '/img/servicio5.png',
+];
+
+const serviceList = t.services.list.map((item, index) => ({
+  ...item,
+  icon: icons[index],
+  image: images[index],
+}));
 ---
 
 <Layout title={`VOLT Solar Energy | ${t.header.services}`}>
-  <ComingSoon lang={currentLang} t={t} />
+  <Hero
+    title={t.services.title}
+    subtitle={t.services.subtitle}
+    image="/img/img_1.jpg"
+    lang={currentLang}
+    t={t}
+  />
+
+  <section class="py-20 px-4 bg-background-secondary dark:bg-dark-secondary">
+    <div class="max-w-7xl mx-auto space-y-16">
+      <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+        {serviceList.slice(0, 3).map((service) => <ServiceCard {...service} />)}
+      </div>
+      <div class="grid md:grid-cols-2 gap-10 max-w-4xl mx-auto">
+        {serviceList.slice(3).map((service) => <ServiceCard {...service} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-background dark:bg-dark-background px-4 py-20">
+    <div class="max-w-7xl mx-auto grid md:grid-cols-2 gap-12 items-center">
+      <!-- Texto -->
+      <div>
+        <p class="text-green-dark dark:text-dark-green-light font-semibold text-lg mb-2">
+          {t.services.whyChooseUs.badge}
+        </p>
+        <h2 class="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-dark-text-primary mb-6 leading-tight">
+          {t.services.whyChooseUs.title}
+        </h2>
+        <p class="text-text-secondary dark:text-dark-text-secondary text-base mb-10">
+          {t.services.whyChooseUs.description}
+        </p>
+  
+        <!-- Lista de beneficios -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          {t.services.whyChooseUs.benefits.map((item, index) => (
+            <div class="flex items-start gap-4">
+              <div class="w-12 h-12 rounded-full bg-green-light flex items-center justify-center text-white">
+                <!-- Asegúrate de importar estos íconos si usas Lucide -->
+                {
+                  item.icon === 'Check' ? <Check class="w-5 h-5" /> :
+                  item.icon === 'Users2' ? <Users2 class="w-5 h-5" /> :
+                  item.icon === 'Handshake' ? <Handshake class="w-5 h-5" /> :
+                  item.icon === 'Headphones' ? <Headphones class="w-5 h-5" /> : null
+                }
+              </div>
+              <div>
+                <p class="text-sm text-text-secondary dark:text-dark-text-secondary">{item.label}</p>
+                <p class="font-bold text-text-primary dark:text-dark-text-primary">{item.value}</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+  
+      <!-- Imagen -->
+      <div class="rounded-3xl overflow-hidden shadow-xl">
+        <img
+          src="/img/servicio6.png"
+          alt="Sistemas solares instalados"
+          class="w-full h-full object-cover"
+          loading="lazy"
+        />
+      </div>
+    </div>
+  </section>
+  <div class="py-5"/>
 </Layout>

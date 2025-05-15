@@ -1,0 +1,46 @@
+---
+// Props
+export interface Props {
+  title: string;
+  description: string;
+  icon: (props: Record<string, any>) => any;
+  image: string;
+}
+
+const { title, description, icon: Icon, image } = Astro.props;
+---
+
+<article
+  class="rounded-3xl overflow-hidden shadow-xl bg-background dark:bg-dark-background border border-line dark:border-dark-line transition-all duration-300 group"
+>
+  <!-- Imagen superior con relación de aspecto -->
+  <div class="w-full aspect-video bg-black">
+    <img
+      src={image}
+      alt={title}
+      class="w-full h-full object-cover object-center transition-transform duration-500 group-hover:scale-105"
+      loading="lazy"
+    />
+  </div>
+
+  <!-- Contenido -->
+  <div class="p-6 flex flex-col gap-4">
+    <!-- Icono circular -->
+    {
+      Icon && (
+        <div class="w-14 h-14 rounded-full bg-background-tertiary dark:bg-dark-tertiary flex items-center justify-center shadow-md">
+          <Icon class="w-6 h-6 text-green-dark dark:text-dark-green-light" />
+        </div>
+      )
+    }
+    <!-- Título -->
+    <h3 class="text-xl font-bold text-text-primary dark:text-dark-text-primary">
+      {title}
+    </h3>
+
+    <!-- Descripción -->
+    <p class="text-text-secondary dark:text-dark-text-secondary text-sm leading-relaxed">
+      {description}
+    </p>
+  </div>
+</article>
