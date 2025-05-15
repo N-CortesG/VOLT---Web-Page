@@ -26,13 +26,15 @@ const en = {
     privacy: 'Privacy Policy',
   },
   footer: {
-    linksTitle: 'Links',
+    linksTitle: 'Quick Links',
     contactTitle: 'Contact',
     followUs: 'Follow us',
     rights: 'All rights reserved.',
     location: 'Cali, Colombia',
     newsletter: 'Join our networks and stay updated with the latest news.',
     quoteNow: 'Get a quote',
+    terms: 'Terms',
+    privacy: 'Privacy',
     description:
       'Volt Solar Energy drives a sustainable future with innovative solar solutions for homes and businesses.',
   },
@@ -245,6 +247,143 @@ const en = {
         },
       ],
     },
+  },
+
+  // 🔽 Sección contact
+
+  contact: {
+    title: 'Contact Us',
+    subtitle: 'We’re here to help you start your solar transition.',
+    title2: 'Request Your Quote',
+    description:
+      'Fill out the form and one of our advisors will contact you via WhatsApp to provide personalized assistance.',
+    form: {
+      name: 'Full name',
+      email: 'Email address',
+      phone: 'Phone number',
+      message: 'How can we help you?',
+      submit: 'Request quote',
+      success: 'Your message has been sent. We’ll contact you shortly.',
+      error: 'There was an error sending your message. Please try again.',
+      termsError: 'You must accept the terms and conditions to continue.',
+      acceptation: 'I accept the',
+    },
+    info: {
+      heading: 'Prefer immediate assistance? Message us on WhatsApp',
+      description:
+        'Have questions or need faster support? Our team is available on WhatsApp to provide quick and personalized assistance.',
+      submit: 'Send message',
+      phone: 'Call us:',
+      hours: 'Business hours',
+      hoursDetail: 'Monday to Friday: 8:00 a.m. – 6:00 p.m. / Saturday: 9:00 a.m. – 1:00 p.m.',
+      questions: 'Have questions? We have answers',
+    },
+    modal: {
+      title: 'Thank you for your message!',
+      description: 'We’ll reach out to you soon via WhatsApp or email.',
+      button: 'Close',
+    },
+  },
+
+  // 🔽 Sección terminos y condiciones
+
+  terms: {
+    title: 'Terms and Conditions of Use',
+    updated: 'Last updated:',
+    content: 'Content',
+    intro:
+      'This website is operated by Volt Solar Energy. By accessing or using our platform, you accept these Terms and Conditions. If you do not agree with any part of these terms, we recommend that you do not continue using the site.',
+    sections: [
+      {
+        heading: 'Responsible party',
+        text: 'Volt Solar Energy is a company specialized in photovoltaic solar energy solutions, registered in Colombia. You can contact us at voltsolarcol@gmail.com.',
+      },
+      {
+        heading: 'Purpose of the site',
+        text: 'This website is intended to provide information about our services, allow users to request consultations, quotes, commercial contact, and other activities related to the use of solar energy.',
+      },
+      {
+        heading: 'Appropriate use of content',
+        text: 'Users agree to use the published information appropriately, legally, and responsibly. It is prohibited to copy, distribute, modify, or reuse site content without express authorization.',
+      },
+      {
+        heading: 'Intellectual property',
+        text: 'All content on this website, including texts, logos, images, graphics, and designs, is the exclusive property of Volt Solar Energy or its providers and is protected under national and international copyright and intellectual property laws.',
+      },
+      {
+        heading: 'Limited liability',
+        text: 'Volt Solar Energy is not responsible for damages arising from misuse of the site, service interruptions, content errors, or external links.',
+      },
+      {
+        heading: 'Third-party links',
+        text: 'This site may contain links to third-party sites over which we have no control. We are not responsible for the content, practices, or privacy policies of such sites.',
+      },
+      {
+        heading: 'Modifications',
+        text: 'Volt Solar Energy reserves the right to modify these Terms and Conditions at any time. We recommend checking this page periodically to stay informed about changes.',
+      },
+      {
+        heading: 'Applicable law',
+        text: 'This site operates under the laws of the Republic of Colombia. Any dispute arising from the use of the site will be resolved in accordance with Colombian law.',
+      },
+    ],
+  },
+
+  // 🔽 Sección privacidad
+
+  privacy: {
+    title: 'Privacy Policy',
+    updated: 'Last updated:',
+    content: 'Content',
+    intro:
+      'In compliance with Colombian Law 1581 of 2012 on Personal Data Protection and related regulations, Volt Solar Energy shares its data processing policy, applicable to all users who browse or provide information through this website.',
+    sections: [
+      {
+        heading: 'Data Controller',
+        text: 'Volt Solar Energy\nEmail: voltsolarcol@gmail.com\nWhatsApp: +57 322 530 9005',
+      },
+      {
+        heading: 'Data Collected',
+        text: 'We collect name, email, phone number, city, estimated energy usage, and any other information voluntarily provided via forms, networks, or communication channels.',
+      },
+      {
+        heading: 'Purpose of Processing',
+        text: 'Personal data will be used for the following purposes:',
+        list: [
+          'Provide technical and commercial advice on solar energy solutions',
+          'Send quotes, proposals, and informative material',
+          'Manage communications via email, WhatsApp, or phone call',
+          'Send promotional campaigns related to our services',
+          'Analyze browsing behavior through analytics tools and cookies',
+        ],
+      },
+      {
+        heading: 'Rights of the Data Subject',
+        text: 'As the data subject, you have the right to:',
+        list: [
+          'Access, update, and correct your personal data',
+          'Request deletion or revoke consent',
+          'Request proof of authorization',
+          'File complaints with the Superintendence of Industry and Commerce (SIC)',
+        ],
+      },
+      {
+        heading: 'Contact Channels',
+        text: 'You may contact us at voltsolarcol@gmail.com, including your full name and request. We will respond within a maximum of 15 business days.',
+      },
+      {
+        heading: 'Data Sharing',
+        text: 'Volt Solar Energy may share information with technology platforms such as Meta, WhatsApp Cloud API, or cloud services, exclusively for authorized purposes and under appropriate security standards.',
+      },
+      {
+        heading: 'Use of Cookies',
+        text: 'We use cookies and analytics tools to improve your browsing experience. By using this site, you accept this use. You may configure your browser to block them if preferred.',
+      },
+      {
+        heading: 'Validity and Changes',
+        text: 'This policy is effective from its publication and may be modified without prior notice. Updates will be published on this page.',
+      },
+    ],
   },
 };
 

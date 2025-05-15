@@ -1,64 +1,91 @@
-<section class="text-center">
-  <form id="contact-form" method="POST" class="mx-auto max-w-xl text-left rounded-xl space-y-6">
-    <!-- EMAIL -->
-    <div>
-      <label for="email" class="form-label">Correo electrónico *</label>
-      <input
-        type="email"
-        name="email"
-        id="email"
-        required
-        placeholder="ejemplo@email.com"
-        class="form-input"
-      />
-    </div>
+---
+import { getTranslation } from '@i18n/index';
 
-    <!-- NOMBRE -->
-    <div>
-      <label for="name" class="form-label">Nombre completo *</label>
+const lang = Astro.params.lang;
+const currentLang = lang === 'es' || lang === 'en' ? lang : 'es';
+const t = getTranslation(currentLang);
+---
+
+<section class="p-10 bg-background dark:bg-dark-background rounded-xl">
+  <div class="max-w-2xl mx-auto text-center space-y-4 mb-10">
+    <h2
+      class="text-3xl md:text-4xl font-extrabold text-text-primary dark:text-dark-text-primary leading-tight"
+    >
+      {t.contact.title}
+    </h2>
+    <p class="text-green-dark dark:text-green-light font-semibold">{t.contact.subtitle}</p>
+  </div>
+
+  <form id="contact-form" method="POST" class="max-w-xl mx-auto space-y-6 text-left">
+    <div class="flex flex-col md:flex-row gap-4">
       <input
         type="text"
         name="name"
-        id="name"
         required
-        placeholder="Tu nombre"
-        class="form-input"
+        placeholder={t.contact.form.name}
+        class="form-input flex-1"
       />
-    </div>
-
-    <!-- TELÉFONO -->
-    <div>
-      <label for="phone" class="form-label">Teléfono *</label>
       <input
-        type="tel"
-        name="phone"
-        id="phone"
+        type="email"
+        name="email"
         required
-        pattern="3[0-9]{9}"
-        title="Debe comenzar con 3 y tener 10 dígitos sin espacios"
-        placeholder="3001234567"
-        class="form-input"
-        oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+        placeholder={t.contact.form.email}
+        class="form-input flex-1"
       />
     </div>
 
-    <!-- MENSAJE -->
-    <div>
-      <label for="message" class="form-label">Mensaje</label>
-      <textarea
-        name="message"
-        id="message"
-        rows="4"
-        placeholder="Cuéntanos qué necesitas"
-        class="form-input"></textarea>
+    <input
+      type="tel"
+      name="phone"
+      required
+      placeholder={t.contact.form.phone}
+      pattern="3[0-9]{9}"
+      title="Debe comenzar con 3 y tener 10 dígitos sin espacios"
+      oninput="this.value = this.value.replace(/[^0-9]/g, '')"
+      class="form-input"
+    />
+
+    <textarea
+      name="message"
+      rows="4"
+      placeholder={t.contact.form.message}
+      class="form-input resize-none"></textarea>
+
+    <!-- Términos y condiciones -->
+    <div id="terms-container" class="flex items-start gap-2 text-sm">
+      <input
+        id="terms"
+        name="terms"
+        type="checkbox"
+        class="mt-1 accent-yellow-light dark:accent-dark-yellow-light"
+      />
+      <label for="terms" class="text-text-secondary dark:text-dark-text-secondary">
+        {t.contact.form.acceptation}
+        <a
+          href={`/${currentLang}/terms`}
+          class="underline text-yellow-light dark:text-dark-yellow-light hover:text-yellow-dark"
+        >
+          {t.footer.terms}
+        </a>
+        &
+        <a
+          href={`/${currentLang}/privacy`}
+          class="underline text-yellow-light dark:text-dark-yellow-light hover:text-yellow-dark"
+        >
+          {t.footer.privacy}
+        </a>.
+      </label>
     </div>
+    <p id="terms-error" class="hidden text-red-600 text-sm">
+      {t.contact.form.termsError}
+    </p>
 
-    <p class="text-sm mt-2 text-gray-500 dark:text-gray-400 italic">* Campos obligatorios</p>
-
-    <button type="submit" class="btn-primary w-full"> Solicitar cotización </button>
+    <button type="submit" id="submit-btn" class="btn-primary w-full">
+      {t.contact.form.submit}
+    </button>
   </form>
 
-  <!-- MODAL DE ÉXITO -->
+  <!-- Modal éxito -->
   <div
     id="success-modal"
     class="fixed inset-0 flex items-center justify-center bg-black/60 z-50 hidden"
@@ -76,33 +103,27 @@
         ></path>
       </svg>
       <h3 class="text-xl font-bold text-green-dark dark:text-green-light">
-        ¡Gracias por tu mensaje!
+        {t.contact.modal.title}
       </h3>
       <p class="mt-2 text-text-secondary dark:text-dark-text-secondary">
-        Te contactaremos muy pronto vía WhatsApp o correo electrónico.
+        {t.contact.modal.description}
       </p>
       <button
         id="close-modal-btn"
         class="mt-6 px-6 py-2 bg-green-dark hover:bg-green-light dark:bg-dark-green-light dark:hover:bg-dark-green-dark text-white rounded-md"
       >
-        Cerrar (5)
+        {t.contact.modal.button} (5)
       </button>
     </div>
   </div>
 </section>
 
 <style>
-  .form-label {
-    @apply block font-semibold mb-1 text-text-primary dark:text-dark-text-primary;
-  }
   .form-input {
-    @apply w-full px-4 py-2 rounded-md border border-line dark:border-dark-line bg-background dark:bg-dark-background text-text-primary dark:text-dark-text-primary;
+    @apply w-full px-4 py-3 rounded-md border border-line dark:border-dark-line bg-background dark:bg-dark-background text-text-primary dark:text-dark-text-primary focus:outline-none focus:ring-2 focus:ring-yellow-light dark:focus:ring-dark-yellow-light;
   }
   .btn-primary {
     @apply bg-green-dark hover:bg-green-light dark:bg-dark-green-light dark:hover:bg-dark-green-dark text-white font-semibold px-6 py-3 rounded-md transition-colors;
-  }
-  .modal-box {
-    @apply bg-background dark:bg-dark-background rounded-lg shadow-lg p-8 max-w-md;
   }
   .animate-fade-in {
     animation: fadeIn 0.4s ease-out forwards;
@@ -126,18 +147,40 @@
   const form = document.querySelector('#contact-form');
   const modal = document.getElementById('success-modal');
   const closeBtn = document.getElementById('close-modal-btn');
+  const termsCheckbox = document.getElementById('terms');
+  const termsError = document.getElementById('terms-error');
+  const termsContainer = document.getElementById('terms-container');
+  const submitBtn = document.getElementById('submit-btn');
+
+  termsCheckbox.addEventListener('change', () => {
+    if (termsCheckbox.checked) {
+      termsError.classList.add('hidden');
+      termsContainer.classList.remove('border', 'border-red-500', 'rounded', 'p-2');
+    }
+  });
 
   form.addEventListener('submit', async (e) => {
     e.preventDefault();
+
+    if (!termsCheckbox.checked) {
+      termsError.classList.remove('hidden');
+      termsContainer.classList.add('border', 'border-red-500', 'rounded', 'p-2');
+      return;
+    }
+
+    termsError.classList.add('hidden');
+    termsContainer.classList.remove('border', 'border-red-500', 'rounded', 'p-2');
+
+    // Bloquear botón
+    submitBtn.disabled = true;
+    submitBtn.classList.add('opacity-50', 'cursor-not-allowed');
+
     const data = new FormData(form);
 
     try {
       await fetch(
         'https://script.google.com/macros/s/AKfycbxAAO0j8rLP23hPDhYreYeb-wfPyxqXZ6UdRgz8HBarS8EaY30wFBytR3-P5vHJM2FBLw/exec',
-        {
-          method: 'POST',
-          body: data,
-        }
+        { method: 'POST', body: data }
       );
 
       form.reset();
@@ -146,7 +189,6 @@
 
       let countdown = 5;
       closeBtn.textContent = `Cerrar (${countdown})`;
-
       const interval = setInterval(() => {
         countdown--;
         closeBtn.textContent = `Cerrar (${countdown})`;
@@ -164,10 +206,17 @@
       function closeModal() {
         modal.classList.add('hidden');
         document.body.classList.remove('no-scroll');
+        // Restaurar botón
+        submitBtn.disabled = false;
+        submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+        submitBtn.textContent = `${t.contact.form.submit}`;
       }
     } catch (error) {
-      alert('Error al enviar. Intenta de nuevo.');
+      alert(`${t.contact.form.error}`);
       console.error(error);
+      submitBtn.disabled = false;
+      submitBtn.classList.remove('opacity-50', 'cursor-not-allowed');
+      submitBtn.textContent = `${t.contact.form.submit}`;
     }
   });
 </script>

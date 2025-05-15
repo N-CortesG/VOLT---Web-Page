@@ -17,78 +17,62 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
 ---
 
 <header
-  class="bg-background text-text-primary dark:bg-dark-background dark:text-dark-text-primary py-4 shadow-sm fixed w-full z-50"
+  class="bg-background/90 backdrop-blur text-text-primary dark:bg-dark-background/80 dark:text-dark-text-primary py-4 shadow-sm fixed w-full z-50"
 >
-  <!-- Desktop Header -->
-  <div class="hidden md:flex container mx-auto px-4 justify-between items-center">
+  <!-- Header Desktop -->
+  <div class="hidden lg:flex max-w-7xl mx-auto px-4 justify-between items-center">
+    <!-- Logo -->
     <a href={`/${lang}`} aria-label="Inicio">
-      <img src="/logos/logo_2.svg" alt="Volt Solar Energy" class="h-12 md:h-14 w-auto" />
+      <img src="/logos/logo_2.svg" alt="Volt Solar Energy" class="h-12 w-auto max-w-[160px]" />
     </a>
 
+    <!-- Navegación -->
     <nav aria-label="Navegación principal">
-      <ul class="flex gap-2">
-        <li>
-          <a
-            href={`/${lang}`}
-            class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
-              pathWithoutLang === '/'
-                ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
-                : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
-            }`}
-          >
-            {t.header.home}
-          </a>
-        </li>
-        <li>
-          <a
-            href={`/${lang}/about`}
-            class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
-              pathWithoutLang.startsWith('/about')
-                ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
-                : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
-            }`}
-          >
-            {t.header.about}
-          </a>
-        </li>
-        <li>
-          <a
-            href={`/${lang}/services`}
-            class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
-              pathWithoutLang.startsWith('/services')
-                ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
-                : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
-            }`}
-          >
-            {t.header.services}
-          </a>
-        </li>
-        <li>
-          <a
-            href={`/${lang}/contact`}
-            class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
-              pathWithoutLang.startsWith('/contact')
-                ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
-                : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
-            }`}
-          >
-            {t.header.contact}
-          </a>
-        </li>
+      <ul class="flex gap-1 xl:gap-2 items-center">
+        {
+          [
+            { label: t.header.home, path: '/' },
+            { label: t.header.about, path: '/about' },
+            { label: t.header.services, path: '/services' },
+            { label: t.header.projects, path: '/projects' },
+            { label: t.header.faq, path: '/faq' },
+            { label: t.header.blog, path: '/blog' },
+            { label: t.header.contact, path: '/contact' },
+          ].map(({ label, path }) => {
+            const isActive =
+              (path === '/' && pathWithoutLang === '/') ||
+              (path !== '/' && pathWithoutLang.startsWith(path));
+            return (
+              <li>
+                <a
+                  href={`/${lang}${path === '/' ? '' : path}`}
+                  class={`px-3 py-2 rounded-md text-sm font-medium transition-colors duration-200 ${
+                    isActive
+                      ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
+                      : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
+                  }`}
+                >
+                  {label}
+                </a>
+              </li>
+            );
+          })
+        }
       </ul>
     </nav>
 
-    <div class="flex items-center gap-x-2">
-      <!-- Botón WhatsApp -->
+    <!-- Extras -->
+    <div class="flex items-center gap-2">
+      <!-- WhatsApp -->
       <a
         href={socialLinks.whatsapp}
-        class="px-4 py-2 bg-green-dark hover:bg-green-light dark:bg-dark-green-light dark:hover:bg-dark-green-dark text-white rounded-md font-semibold transition-colors duration-300 inline-flex items-center gap-2"
+        class="px-3 py-2 bg-green-dark hover:bg-green-light dark:bg-dark-green-light dark:hover:bg-dark-green-dark text-white rounded-md text-sm font-semibold transition-colors duration-300 inline-flex items-center gap-2"
         target="_blank"
         rel="noopener noreferrer"
       >
         <svg
           xmlns="http://www.w3.org/2000/svg"
-          class="w-5 h-5"
+          class="w-4 h-4"
           fill="currentColor"
           viewBox="0 0 24 24"
         >
@@ -98,25 +82,22 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
         </svg>
       </a>
 
-      <!-- Selector de idioma -->
+      <!-- Selector idioma -->
       <LanguageSwitcher lang={lang} />
 
-      <!-- Modo oscuro/claro -->
+      <!-- Tema -->
       <ThemeToggle client:only="react" />
     </div>
   </div>
 
-  <!-- Mobile Header -->
-  <div class="md:hidden px-4 flex items-center justify-between relative">
+  <!-- Header Móvil -->
+  <div class="lg:hidden px-4 flex items-center justify-between">
     <button
       id="menu-toggle"
       aria-label="Abrir menú"
       aria-expanded="false"
       aria-controls="mobile-menu"
-      class="flex items-center px-3 py-2 border rounded z-50 transition-colors duration-300
-             text-text-primary border-line hover:bg-yellow-light/20
-             dark:text-dark-text-primary dark:border-dark-line dark:hover:bg-dark-yellow-light/20
-             bg-background dark:bg-dark-secondary"
+      class="flex items-center px-3 py-2 border rounded text-text-primary border-line hover:bg-yellow-light/10 dark:text-dark-text-primary dark:border-dark-line dark:hover:bg-dark-yellow-light/10 bg-background dark:bg-dark-secondary z-50"
       onclick="toggleMenu()"
     >
       <svg class="fill-current h-4 w-4" viewBox="0 0 20 20">
@@ -129,10 +110,11 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
     </a>
   </div>
 
-  <!-- Overlay y menú móvil -->
+  <!-- Menú móvil y overlay -->
   <Overlay />
   <MobileMenu currentPath={currentPath} lang={lang} t={t} />
-  <!-- JS Menu Handler -->
+
+  <!-- Script para manejo de menú -->
   <script is:inline>
     const toggleMenu = () => {
       const menu = document.getElementById('mobile-menu');
@@ -141,7 +123,6 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
 
       const isOpen = !menu.classList.contains('hidden');
       button.setAttribute('aria-expanded', !isOpen);
-
       menu.classList.toggle('hidden');
       menu.classList.toggle('opacity-0');
       menu.classList.toggle('translate-y-[-10px]');
@@ -160,11 +141,8 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
       }
     };
 
-    // Cierra si cambia el modo de color
+    // Cierra menú si cambia el modo oscuro
     const observer = new MutationObserver(closeMenu);
-    observer.observe(document.documentElement, {
-      attributes: true,
-      attributeFilter: ['class'],
-    });
+    observer.observe(document.documentElement, { attributes: true, attributeFilter: ['class'] });
   </script>
 </header>

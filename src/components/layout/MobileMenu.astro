@@ -24,10 +24,10 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
         <a
           href={`/${lang}`}
           onclick="closeMenu()"
-          class={`block px-4 py-3 rounded-md font-medium transition-colors duration-300 ${
+          class={`h-12 px-4 flex items-center font-medium transition-none ${
             pathWithoutLang === '/'
-              ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
-              : 'hover:bg-yellow-light/10 dark:hover:bg-dark-yellow-light/10'
+              ? 'text-yellow-light dark:text-dark-yellow-light'
+              : 'text-text-primary dark:text-dark-text-primary'
           }`}
         >
           {t.header.home}
@@ -36,10 +36,11 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
       <li>
         <a
           href={`/${lang}/about`}
-          class={`px-4 py-2 rounded-md font-medium whitespace-nowrap transition-colors duration-300 ${
-            pathWithoutLang.startsWith('/about`')
-              ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
-              : 'hover:bg-yellow-light/20 dark:hover:bg-dark-yellow-light/20'
+          onclick="closeMenu()"
+          class={`h-12 px-4 flex items-center font-medium transition-none ${
+            pathWithoutLang.startsWith('/about')
+              ? 'text-yellow-light dark:text-dark-yellow-light'
+              : 'text-text-primary dark:text-dark-text-primary'
           }`}
         >
           {t.header.about}
@@ -49,10 +50,10 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
         <a
           href={`/${lang}/services`}
           onclick="closeMenu()"
-          class={`block px-4 py-3 rounded-md font-medium transition-colors duration-300 ${
+          class={`h-12 px-4 flex items-center font-medium transition-none ${
             pathWithoutLang.startsWith('/services')
-              ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
-              : 'hover:bg-yellow-light/10 dark:hover:bg-dark-yellow-light/10'
+              ? 'text-yellow-light dark:text-dark-yellow-light'
+              : 'text-text-primary dark:text-dark-text-primary'
           }`}
         >
           {t.header.services}
@@ -60,12 +61,51 @@ const pathWithoutLang = currentPath.replace(/^\/(es|en)/, '') || '/';
       </li>
       <li>
         <a
+          href={`/${lang}/projects`}
+          onclick="closeMenu()"
+          class={`h-12 px-4 flex items-center font-medium transition-none ${
+            pathWithoutLang.startsWith('/projects')
+              ? 'text-yellow-light dark:text-dark-yellow-light'
+              : 'text-text-primary dark:text-dark-text-primary'
+          }`}
+        >
+          {t.header.projects}
+        </a>
+      </li>
+      <li>
+        <a
+          href={`/${lang}/faq`}
+          onclick="closeMenu()"
+          class={`h-12 px-4 flex items-center font-medium transition-none ${
+            pathWithoutLang.startsWith('/faq')
+              ? 'text-yellow-light dark:text-dark-yellow-light'
+              : 'text-text-primary dark:text-dark-text-primary'
+          }`}
+        >
+          {t.header.faq}
+        </a>
+      </li>
+      <li>
+        <a
+          href={`/${lang}/blog`}
+          onclick="closeMenu()"
+          class={`h-12 px-4 flex items-center font-medium transition-none ${
+            pathWithoutLang.startsWith('/blog')
+              ? 'text-yellow-light dark:text-dark-yellow-light'
+              : 'text-text-primary dark:text-dark-text-primary'
+          }`}
+        >
+          {t.header.blog}
+        </a>
+      </li>
+      <li>
+        <a
           href={`/${lang}/contact`}
           onclick="closeMenu()"
-          class={`block px-4 py-3 rounded-md font-medium transition-colors duration-300 ${
+          class={`h-12 px-4 flex items-center font-medium transition-none ${
             pathWithoutLang.startsWith('/contact')
-              ? 'bg-yellow-light text-white dark:bg-dark-yellow-light'
-              : 'hover:bg-yellow-light/10 dark:hover:bg-dark-yellow-light/10'
+              ? 'text-yellow-light dark:text-dark-yellow-light'
+              : 'text-text-primary dark:text-dark-text-primary'
           }`}
         >
           {t.header.contact}

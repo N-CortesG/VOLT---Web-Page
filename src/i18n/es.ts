@@ -25,13 +25,15 @@ const es = {
     privacy: 'Política de Privacidad',
   },
   footer: {
-    linksTitle: 'Enlaces',
+    linksTitle: 'Enlaces Rapidos',
     contactTitle: 'Contáctanos',
     followUs: 'Síguenos',
     rights: 'Todos los derechos reservados.',
     location: 'Cali, Colombia',
     newsletter: 'Únete a nuestras redes y mantente actualizado con las últimas novedades.',
     quoteNow: 'Solicitar cotización',
+    terms: 'Términos y condiciones',
+    privacy: 'Privacidad',
     description:
       'Volt Solar Energy impulsa un futuro sostenible con soluciones solares innovadoras para hogares y negocios.',
   },
@@ -247,6 +249,143 @@ const es = {
         },
       ],
     },
+  },
+
+  // 🔽 Sección contact
+
+  contact: {
+    title: 'Contáctanos',
+    subtitle: 'Estamos aquí para ayudarte a comenzar tu transición solar.',
+    title2: 'Solicita tu cotización',
+    description:
+      'Rellena el formulario y uno de nuestros asesores te contactará a través de WhatsApp para brindarte atención personalizada.',
+    form: {
+      name: 'Nombre completo',
+      email: 'Correo electrónico',
+      phone: 'Teléfono',
+      message: '¿En qué podemos ayudarte?',
+      submit: 'Solicitar cotización',
+      success: 'Tu mensaje ha sido enviado. Te contactaremos pronto.',
+      error: 'Hubo un error al enviar tu mensaje. Inténtalo nuevamente.',
+      termsError: 'Debes aceptar los términos y condiciones para continuar.',
+      acceptation: 'Acepto los',
+    },
+    info: {
+      heading: '¿Prefieres atención inmediata? Escríbenos por WhatsApp',
+      description:
+        '¿Tienes dudas, preguntas o deseas atención más rápida? Nuestro equipo está disponible vía WhatsApp para brindarte una atención ágil y personalizada.',
+      submit: 'Enviar mensaje',
+      phone: 'Llámanos:',
+      hours: 'Horario de atención',
+      hoursDetail: 'Lunes a viernes: 8:00 a.m. - 6:00 p.m. / Sábados: 9:00 a.m. - 1:00 p.m.',
+      questions: '¿Tienes preguntas? Tenemos respuestas',
+    },
+    modal: {
+      title: '¡Gracias por tu mensaje!',
+      description: 'Te contactaremos muy pronto vía WhatsApp o correo electrónico.',
+      button: 'Cerrar',
+    },
+  },
+
+  // 🔽 Sección terminos y condiciones
+
+  terms: {
+    title: 'Términos y Condiciones de Uso',
+    updated: 'Última actualización:',
+    content: 'Contenido',
+    intro:
+      'Este sitio web es operado por Volt Solar Energy. Al acceder o utilizar nuestra plataforma web, usted acepta los presentes Términos y Condiciones. Si no está de acuerdo con alguna parte de estos términos, le recomendamos no continuar con el uso del sitio.',
+    sections: [
+      {
+        heading: 'Identificación del responsable',
+        text: 'Volt Solar Energy es una empresa especializada en soluciones de energía solar fotovoltaica, registrada en Colombia. Puede contactarnos a través del correo voltsolarcol@gmail.com.',
+      },
+      {
+        heading: 'Objeto del sitio',
+        text: 'El objetivo de este sitio web es ofrecer información sobre nuestros servicios, permitir la solicitud de asesorías, cotizaciones, contacto comercial y demás actividades relacionadas con el uso de energía solar.',
+      },
+      {
+        heading: 'Uso adecuado del contenido',
+        text: 'El usuario se compromete a hacer un uso adecuado, lícito y responsable de la información publicada. Se prohíbe copiar, distribuir, modificar o reutilizar los contenidos del sitio sin autorización expresa.',
+      },
+      {
+        heading: 'Propiedad intelectual',
+        text: 'Todo el contenido de este sitio web, incluyendo textos, logotipos, imágenes, gráficos y diseños, son propiedad exclusiva de Volt Solar Energy o sus proveedores y están protegidos por la legislación nacional e internacional sobre derechos de autor y propiedad industrial.',
+      },
+      {
+        heading: 'Responsabilidad limitada',
+        text: 'Volt Solar Energy no se responsabiliza por daños derivados del mal uso del sitio, interrupciones del servicio, errores de contenido o enlaces a sitios externos.',
+      },
+      {
+        heading: 'Enlaces a terceros',
+        text: 'Este sitio puede contener enlaces a sitios de terceros sobre los cuales no tenemos control. No nos hacemos responsables del contenido, prácticas o políticas de privacidad de estos sitios.',
+      },
+      {
+        heading: 'Modificaciones',
+        text: 'Volt Solar Energy se reserva el derecho de modificar estos Términos y Condiciones en cualquier momento. Se recomienda revisar esta página periódicamente para estar al tanto de los cambios.',
+      },
+      {
+        heading: 'Legislación aplicable',
+        text: 'Este sitio opera bajo la legislación vigente de la República de Colombia. Cualquier controversia derivada del uso del sitio será resuelta bajo las leyes colombianas.',
+      },
+    ],
+  },
+
+  // 🔽 Sección privacy
+
+  privacy: {
+    title: 'Política de Privacidad',
+    updated: 'Última actualización:',
+    content: 'Contenido',
+    intro:
+      'En cumplimiento de la Ley 1581 de 2012 de Protección de Datos Personales y demás normas concordantes, Volt Solar Energy informa su política de tratamiento de datos personales, aplicable a todos los usuarios que naveguen o proporcionen información a través de este sitio web.',
+    sections: [
+      {
+        heading: 'Responsable del tratamiento',
+        text: 'Volt Solar Energy\nCorreo electrónico: voltsolarcol@gmail.com\nWhatsApp: +57 322 530 9005',
+      },
+      {
+        heading: 'Datos recolectados',
+        text: 'A través de nuestros formularios, redes y canales de atención recolectamos: nombre, correo electrónico, número de contacto, ciudad, consumo energético estimado y cualquier otra información proporcionada voluntariamente.',
+      },
+      {
+        heading: 'Finalidad del tratamiento',
+        text: 'Los datos personales serán utilizados para las siguientes finalidades:',
+        list: [
+          'Brindar asesoría técnica y comercial en soluciones de energía solar',
+          'Enviar cotizaciones, propuestas y material informativo',
+          'Gestionar comunicaciones a través de correo electrónico, WhatsApp o llamada',
+          'Enviar campañas publicitarias relacionadas con nuestros servicios',
+          'Analizar el comportamiento de navegación mediante herramientas de análisis y cookies',
+        ],
+      },
+      {
+        heading: 'Derechos del titular',
+        text: 'Como titular de los datos, usted tiene derecho a:',
+        list: [
+          'Conocer, actualizar y rectificar su información',
+          'Solicitar la supresión o revocar la autorización otorgada',
+          'Solicitar prueba del consentimiento otorgado',
+          'Presentar quejas ante la Superintendencia de Industria y Comercio (SIC)',
+        ],
+      },
+      {
+        heading: 'Canales de atención',
+        text: 'Puede escribir al correo voltsolarcol@gmail.com indicando su nombre completo y tipo de solicitud. Responderemos en un plazo no mayor a 15 días hábiles.',
+      },
+      {
+        heading: 'Transferencia de datos',
+        text: 'Volt Solar Energy puede compartir información con plataformas tecnológicas como Meta, WhatsApp Cloud API o servicios en la nube, exclusivamente para finalidades autorizadas y bajo estándares de protección adecuados.',
+      },
+      {
+        heading: 'Uso de cookies',
+        text: 'Utilizamos cookies y herramientas de analítica para mejorar su experiencia de navegación. Al usar este sitio, usted acepta su uso. Puede configurar su navegador para bloquearlas si lo prefiere.',
+      },
+      {
+        heading: 'Vigencia y cambios',
+        text: 'Esta política entra en vigencia a partir de su publicación y puede ser modificada sin previo aviso. Las actualizaciones estarán disponibles en esta misma página.',
+      },
+    ],
   },
 };
 

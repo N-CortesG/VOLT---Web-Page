@@ -7,6 +7,7 @@ const socialLinks = {
   whatsapp: 'https://wa.me/573225309005',
   email: 'mailto:voltsolarcol@gmail.com',
   phone: '+57 322 530 9005',
+  mail: 'voltsolarcol@gmail.com',
 };
 
 export default socialLinks;

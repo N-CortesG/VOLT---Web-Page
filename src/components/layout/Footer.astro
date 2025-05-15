@@ -46,7 +46,7 @@ const { lang, t } = Astro.props;
       </h3>
       <ul class="space-y-1" aria-label="Información de contacto">
         <li>
-          <a href={socialLinks.email} class="hover:underline">voltsolarcol@gmail.com</a>
+          <a href={socialLinks.email} class="hover:underline">{socialLinks.mail}</a>
         </li>
         <li>
           <a
@@ -116,6 +116,12 @@ const { lang, t } = Astro.props;
   </div>
 
   <div class="text-center text-xs py-4 border-t border-line dark:border-dark-line">
-    © {year} Volt Solar Energy. {t.footer.rights}
+    <p class="space-x-2">
+      <span>© {year} Volt Solar Energy. {t.footer.rights}</span>
+      <span class="mx-1">|</span>
+      <a href={`/${lang}/terms`} class="hover:underline">{t.footer.terms}</a>
+      <span class="mx-1">|</span>
+      <a href={`/${lang}/privacy`} class="hover:underline">{t.footer.privacy}</a>
+    </p>
   </div>
 </footer>
