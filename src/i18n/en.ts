@@ -145,6 +145,37 @@ const en = {
         ],
       },
     },
+    team: {
+      title: 'Meet Our Team',
+      subtitle: 'Real people, true passion for clean energy.',
+      members: [
+        {
+          name: 'Steven Aldana García',
+          role: 'Engineering and Operations Director',
+          bio: 'Specialist in renewable energy and automation. Leads all technical and installation processes with a focus on efficiency and sustainability.',
+          cita: 'Each installation is a chance to apply technology with purpose. Our commitment is to quality and the planet.',
+        },
+        {
+          name: 'Isabella Rojas Samboni',
+          role: 'Commercial Director',
+          bio: 'Expert in commercial relationships and customer service. Connects people with high-impact solar solutions.',
+          cita: 'We don’t just sell panels — we offer trust, guidance, and the opportunity to transform how energy is used.',
+        },
+        {
+          name: 'Nicolás Cortés Gómez',
+          role: 'General Director',
+          bio: 'In charge of strategic direction and business vision. His leadership drives the company’s innovation and growth.',
+          cita: 'We believe the energy transition is possible if we work with passion, purpose, and technology. Volt was born from that commitment.',
+        },
+      ],
+    },
+    aboutUs: {
+      title: 'About Us',
+      paragraph: `At Volt Solar Energy, we are a team of mechatronics engineers from Universidad Autónoma de Occidente, specialized in renewable energy and energy efficiency. Our academic background and professional experience allow us to design and implement intelligent solutions that optimize clean energy usage in residential, commercial, and industrial environments.
+    We firmly believe that the energy transition is achievable when cutting-edge technology is combined with a responsible, customer-centered approach. That’s why every project we deliver is designed to maximize savings, reduce environmental impact, and create long-term sustainable value.
+    Our passion for innovation and automation is reflected in safe, efficient installations that meet the highest quality standards. More than just installing solar panels, we deliver trust, commitment, and measurable results.`,
+      tagline: 'More than solar energy, a way to change your life.',
+    },
   },
 };
 

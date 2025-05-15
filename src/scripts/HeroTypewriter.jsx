@@ -36,7 +36,7 @@ export default function HeroTypewriter({ title = '' }) {
     <h1 className="text-white dark:text-white text-5xl md:text-6xl lg:text-7xl font-extrabold tracking-tight drop-shadow-lg transition-colors duration-500 text-center">
       {displayText}
       <span
-        className={`inline-block w-1 ${showCursor || finished ? 'bg-white' : 'bg-transparent'} ml-1`}
+        className={`inline-block w-1 ${showCursor || finished ? 'bg-background' : 'bg-transparent'} ml-1`}
       >
         &nbsp;
       </span>

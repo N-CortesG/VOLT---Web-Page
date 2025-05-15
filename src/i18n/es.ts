@@ -119,9 +119,9 @@ const es = {
       title: 'Nuestra historia',
       subtitle: 'Comprometidos con un futuro sostenible',
       paragraph: `Volt Solar Energy nace con el propósito de transformar la manera en que hogares y empresas acceden a la energía. 
-  Identificamos la necesidad urgente de soluciones sostenibles y decidimos actuar: unir ingeniería, tecnología y conciencia ambiental. 
-  Desde nuestros primeros proyectos, nos enfocamos en ofrecer instalaciones personalizadas, con equipos de calidad y acompañamiento en todo momento. 
-  Hoy somos una marca que representa confianza, innovación y compromiso con el planeta.`,
+                  Identificamos la necesidad urgente de soluciones sostenibles y decidimos actuar: unir ingeniería, tecnología y conciencia ambiental. 
+                  Desde nuestros primeros proyectos, nos enfocamos en ofrecer instalaciones personalizadas, con equipos de calidad y acompañamiento en todo momento. 
+                  Hoy somos una marca que representa confianza, innovación y compromiso con el planeta.`,
     },
     identity: {
       title: 'Nuestra esencia',
@@ -148,6 +148,37 @@ const es = {
           'Orientación al cliente',
         ],
       },
+    },
+    team: {
+      title: 'Conoce a nuestro equipo',
+      subtitle: 'Personas reales, pasión verdadera por la energía limpia.',
+      members: [
+        {
+          name: 'Steven Aldana García',
+          role: 'Director de Ingeniería y Operaciones',
+          bio: 'Especialista en energías renovables y automatización. Lidera los procesos técnicos y de instalación con enfoque en eficiencia y sostenibilidad.',
+          cita: 'Cada instalación es una oportunidad para aplicar tecnología con propósito. Nuestro compromiso es con la calidad y el planeta.',
+        },
+        {
+          name: 'Isabella Rojas Samboni',
+          role: 'Directora Comercial',
+          bio: 'Experta en relaciones comerciales y atención al cliente. Conecta a las personas con soluciones solares de alto impacto.',
+          cita: 'No vendemos paneles, brindamos confianza, acompañamiento y la posibilidad de transformar la forma en que usamos la energía.',
+        },
+        {
+          name: 'Nicolás Cortés Gómez',
+          role: 'Director General',
+          bio: 'Encargado de la dirección estratégica y la visión empresarial. Su liderazgo impulsa la innovación y el crecimiento de la compañía.',
+          cita: 'Creemos que la transición energética es posible si trabajamos con pasión, propósito y tecnología. Volt nace de ese compromiso.',
+        },
+      ],
+    },
+    aboutUs: {
+      title: 'Quiénes somos',
+      paragraph: `En Volt Solar Energy somos un equipo de ingenieros mecatrónicos egresados de la Universidad Autónoma de Occidente, especializados en energías renovables y eficiencia energética. Nuestra formación y experiencia nos permiten diseñar e implementar soluciones inteligentes que optimizan el uso de energía limpia en hogares, empresas e industrias.
+      Creemos firmemente que la transición energética es posible cuando se combina tecnología de vanguardia con un enfoque responsable y personalizado. Por eso, cada uno de nuestros proyectos está pensado para maximizar el ahorro, reducir el impacto ambiental y generar valor sostenible a largo plazo.
+      Nuestra pasión por la innovación y la automatización se traduce en instalaciones seguras, eficientes y alineadas con los más altos estándares de calidad. Más que ofrecer paneles solares, entregamos confianza, compromiso y resultados medibles.`,
+      tagline: 'Más que energía solar, una forma de cambiar tu vida.',
     },
   },
 };

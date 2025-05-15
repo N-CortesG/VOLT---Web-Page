@@ -1,0 +1,27 @@
+---
+export interface Props {
+  label?: string;
+  align?: 'left' | 'center' | 'right';
+  className?: string;
+}
+
+const { label, align = 'center', className = '' } = Astro.props;
+---
+
+{
+  label ? (
+    <div class={`flex items-center w-full my-8 ${className}`}>
+      <hr
+        class={`flex-grow border-t border-line dark:border-dark-line ${align === 'left' ? 'mr-4' : align === 'right' ? 'ml-4' : 'mx-4'}`}
+      />
+      <span class="text-sm font-medium text-text-secondary dark:text-dark-text-secondary whitespace-nowrap">
+        {label}
+      </span>
+      <hr
+        class={`flex-grow border-t border-line dark:border-dark-line ${align === 'left' ? 'ml-4' : align === 'right' ? 'mr-4' : 'mx-4'}`}
+      />
+    </div>
+  ) : (
+    <hr class={`my-8 border-t border-line dark:border-dark-line ${className}`} />
+  )
+}
