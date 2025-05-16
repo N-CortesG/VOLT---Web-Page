@@ -1,12 +1,21 @@
 ---
 import Layout from '@layouts/Layout.astro';
 import { getTranslation } from '@i18n/index';
-import ComingSoon from '@components/ComingSoon.astro';
+import {
+  Banknote,
+  BatteryCharging,
+  Sun,
+  Wrench,
+  ShieldCheck,
+  Eye,
+  Home,
+  Timer,
+} from 'lucide-astro';
 
 const lang = Astro.params.lang;
 const currentLang = lang === 'es' || lang === 'en' ? lang : 'es';
 
-const t = getTranslation(lang as 'es' | 'en');
+const t = getTranslation(currentLang);
 
 export async function getStaticPaths() {
   return [{ params: { lang: 'es' } }, { params: { lang: 'en' } }];
@@ -14,5 +23,67 @@ export async function getStaticPaths() {
 ---
 
 <Layout title={`VOLT Solar Energy | ${t.header.faq}`}>
-  <ComingSoon lang={currentLang} t={getTranslation(currentLang)} />
+  <section
+    class="py-20 px-4 md:px-12 lg:px-20 bg-background-secondary dark:bg-dark-secondary mt-10"
+  >
+    <div class="max-w-4xl mx-auto text-center mb-12" data-aos="fade-up">
+      <h1 class="text-4xl md:text-5xl font-extrabold text-text-primary dark:text-dark-text-primary">
+        {t.faq.title}
+      </h1>
+      <p class="text-lg text-text-secondary dark:text-dark-text-secondary mt-4">
+        {t.faq.subtitle}
+      </p>
+    </div>
+
+    <div
+      class="max-w-3xl mx-auto divide-y divide-line dark:divide-dark-line rounded-xl overflow-hidden shadow-lg"
+    >
+      {
+        t.faq.questions.map((item, index) => {
+          const icons = [
+            <Wrench class="w-5 h-5 text-orange-deep dark:text-dark-orange-deep" />, // 0
+            <Banknote class="w-5 h-5 text-green-light dark:text-dark-green-light" />, // 1
+            <Sun class="w-5 h-5 text-yellow-light dark:text-dark-yellow-light" />, // 2
+            <BatteryCharging class="w-5 h-5 text-blue-sky dark:text-dark-blue-sky" />, // 3
+            <ShieldCheck class="w-5 h-5 text-copper dark:text-dark-copper" />, // 4
+            <Eye class="w-5 h-5 text-blue-sky dark:text-dark-blue-sky" />, // 5
+            <Home class="w-5 h-5 text-yellow-gold dark:text-dark-yellow-gold" />, // 6
+            <Timer class="w-5 h-5 text-green-lime dark:text-dark-green-lime" />, // 7
+          ];
+
+          return (
+            <details
+              class="group py-6 px-6 bg-white dark:bg-dark-background transition-all duration-300 hover:bg-background-tertiary dark:hover:bg-dark-tertiary"
+              data-aos="fade-up"
+              data-aos-delay={index * 100}
+            >
+              <summary class="flex items-start gap-4 font-semibold text-lg text-text-primary dark:text-dark-text-primary cursor-pointer">
+                <span class="mt-1">{icons[index]}</span>
+                <span class="flex-1 leading-snug">{item.question}</span>
+                <span class="ml-2 text-sm text-text-light dark:text-dark-text-light transition-transform group-open:rotate-180">
+                  ▼
+                </span>
+              </summary>
+              <p class="mt-4 text-base text-text-secondary dark:text-dark-text-secondary leading-relaxed">
+                {item.answer}
+              </p>
+            </details>
+          );
+        })
+      }
+    </div>
+
+    <div class="text-center mt-16" data-aos="fade-up" data-aos-delay="500">
+      <a
+        href={`/${currentLang}/contact`}
+        class="inline-block bg-green-dark hover:bg-green-light dark:bg-dark-green-light dark:hover:bg-dark-green-dark text-white font-semibold px-8 py-4 rounded-2xl shadow-xl transition-all"
+      >
+        {
+          currentLang === 'es'
+            ? '¿Tienes más dudas? Contáctanos'
+            : 'Still have questions? Contact us'
+        }
+      </a>
+    </div>
+  </section>
 </Layout>

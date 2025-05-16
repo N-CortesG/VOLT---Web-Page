@@ -285,6 +285,69 @@ const en = {
     },
   },
 
+  // 🔽 Sección FAQ
+
+  faq: {
+    title: 'Frequently Asked Questions',
+    subtitle: 'Everything you need to know before making a smart decision',
+    questions: [
+      {
+        question: 'What maintenance do solar systems require?',
+        answer:
+          'Solar photovoltaic systems require very little maintenance. We recommend cleaning the panels every 6 months to prevent dust or debris buildup, which can reduce efficiency. Additionally, we conduct annual inspections to check the inverter, structure, connections, and overall system to ensure optimal performance and safety.',
+      },
+      {
+        question: 'How much money can I really save?',
+        answer:
+          'Savings depend on your current electricity usage, location, and system size. However, most of our clients reduce their electricity bills by 50% to 90%. In many cases, the investment pays for itself in 3 to 5 years and continues to generate positive returns for over 20 years. It also protects you from rising utility rates.',
+      },
+      {
+        question: 'Are there legal or financial benefits?',
+        answer:
+          'Yes. In Colombia, installing a solar system gives you access to multiple incentives: up to 50% income tax deduction over 5 years, VAT exemption on solar equipment, accelerated depreciation, and priority in environmental licensing. You may also generate income by selling excess energy back to the grid (Net Metering).',
+      },
+      {
+        question: 'Do solar panels work on cloudy days or at night?',
+        answer:
+          'Yes. Although performance is lower on cloudy days, panels still generate energy thanks to diffused sunlight. For uninterrupted power, we offer hybrid systems with batteries or grid-tied configurations, ensuring consistent energy even at night or in less sunny climates.',
+      },
+      {
+        question: 'What is the lifespan of a solar system?',
+        answer:
+          'Solar panels typically last 25 to 30 years. Inverters usually last 10 to 15 years. We use only certified TIER 1 equipment to ensure long-term high performance. All systems include full warranty and technical support.',
+      },
+      {
+        question: 'Can I monitor my solar system in real time?',
+        answer:
+          'Absolutely. All our systems include real-time monitoring via mobile or desktop, so you can see how much energy you’re producing, consuming, and saving — giving you full control over your solar power.',
+      },
+      {
+        question: 'What happens if I move or sell my property?',
+        answer:
+          'Your solar system adds value to your property. If you decide to move, you can include the system in the sale or contact us to explore relocation options.',
+      },
+      {
+        question: 'How long does the full installation take?',
+        answer:
+          'From design to activation, the process typically takes 5 to 15 business days depending on the project size. At VOLT Solar Energy, we handle every step: assessment, design, legal registration, installation, and post-installation monitoring.',
+      },
+    ],
+  },
+
+  // 🔽 Sección blog
+
+  // i18n/en.ts
+  blog: {
+    title: 'Energy Blog',
+    subtitle: 'Explore ideas, tips and news about solar energy',
+    categories: {
+      articles: 'Articles & Tips',
+      news: 'Industry News',
+      comparisons: 'Comparisons & Reviews',
+    },
+    readMore: 'Read more',
+  },
+
   // 🔽 Sección terminos y condiciones
 
   terms: {

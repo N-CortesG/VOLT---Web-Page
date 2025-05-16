@@ -287,6 +287,69 @@ const es = {
     },
   },
 
+  // 🔽 Sección FAQ
+
+  faq: {
+    title: 'Preguntas Frecuentes',
+    subtitle: 'Todo lo que necesitas saber antes de tomar una decisión inteligente',
+    questions: [
+      {
+        question: '¿Qué tipo de mantenimiento requieren los sistemas solares?',
+        answer:
+          'Los sistemas solares fotovoltaicos requieren un mantenimiento mínimo. Se recomienda una limpieza semestral de los paneles para evitar acumulación de polvo o residuos que reduzcan su eficiencia. Además, realizamos inspecciones anuales para verificar el estado del inversor, conexiones, estructura y demás componentes, garantizando el óptimo funcionamiento y la seguridad del sistema.',
+      },
+      {
+        question: '¿Cuánto puedo ahorrar con energía solar?',
+        answer:
+          'El ahorro depende de tu consumo actual, ubicación y tipo de instalación. Sin embargo, nuestros clientes típicamente reducen su factura de energía entre un 50% y 90%. En muchos casos, la inversión se recupera entre 3 y 5 años, generando un retorno positivo durante más de 20 años. Además, te proteges frente al alza constante de las tarifas eléctricas.',
+      },
+      {
+        question: '¿Qué beneficios legales y financieros obtengo?',
+        answer:
+          'En Colombia, la instalación de sistemas solares te permite acceder a incentivos como: deducción del 50% del valor de la inversión en renta durante 5 años, exención de IVA en componentes del sistema, depreciación acelerada de activos, y prioridad en trámites ambientales. También puedes generar ingresos vendiendo excedentes de energía a la red (Net Metering).',
+      },
+      {
+        question: '¿Funciona el sistema solar cuando está nublado o de noche?',
+        answer:
+          'Sí. Aunque la eficiencia disminuye en días nublados, los paneles siguen generando energía gracias a la radiación difusa. Para garantizar suministro continuo, se puede instalar un sistema híbrido con baterías o conexión a red (sistema interconectado), que asegura energía incluso en la noche o en climas variables.',
+      },
+      {
+        question: '¿Cuál es la vida útil de los paneles solares?',
+        answer:
+          'Los paneles solares tienen una vida útil estimada de 25 a 30 años. Los inversores duran entre 10 y 15 años. Usamos equipos certificados TIER 1 que mantienen alta eficiencia durante décadas. Además, todos nuestros sistemas cuentan con garantía y soporte técnico.',
+      },
+      {
+        question: '¿Puedo monitorear mi sistema solar en tiempo real?',
+        answer:
+          'Sí. Todos nuestros sistemas incluyen monitoreo en línea desde tu celular o computador. Podrás ver en tiempo real cuánto estás generando, cuánto estás consumiendo y tu ahorro acumulado, lo que te da control total de tu energía.',
+      },
+      {
+        question: '¿Qué pasa si me mudo o vendo mi casa?',
+        answer:
+          'El sistema puede aumentar el valor comercial del inmueble. Si decides mudarte, puedes negociar el sistema como parte del valor de venta o consultar con nosotros opciones para trasladarlo a tu nueva vivienda.',
+      },
+      {
+        question: '¿Cuánto tiempo toma la instalación completa?',
+        answer:
+          'Desde el diseño hasta la puesta en marcha, el proceso suele tardar entre 5 y 15 días hábiles, dependiendo del tipo de instalación. En VOLT Solar Energy acompañamos cada paso: diagnóstico, diseño, legalización ante UPME, instalación y monitoreo.',
+      },
+    ],
+  },
+
+  // 🔽 Sección blog
+
+  // i18n/es.ts
+  blog: {
+    title: 'Blog Energético',
+    subtitle: 'Explora ideas, consejos y noticias sobre energía solar',
+    categories: {
+      articles: 'Artículos y Consejos',
+      news: 'Noticias del Sector',
+      comparisons: 'Comparativas y Análisis',
+    },
+    readMore: 'Leer más',
+  },
+
   // 🔽 Sección terminos y condiciones
 
   terms: {

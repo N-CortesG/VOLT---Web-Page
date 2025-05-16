@@ -28,7 +28,7 @@ export async function getStaticPaths() {
       <!-- Imagen (visible primero en mobile) -->
       <div class="order-2 md:order-2 h-full flex items-center justify-center">
         <div
-          class="w-96 rounded-[2rem] overflow-hidden shadow-lg border border-line dark:border-dark-line"
+          class="w-96 h-96 rounded-[2rem] overflow-hidden shadow-lg border border-line dark:border-dark-line"
         >
           <img
             src="/logos/logo_1.svg"
@@ -140,7 +140,7 @@ export async function getStaticPaths() {
         >
           {t.about.team.subtitle}
         </p>
-        <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
+        <!-- <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-10">
           {
             t.about.team.members.map((member, index) => (
               <div
@@ -165,7 +165,7 @@ export async function getStaticPaths() {
               </div>
             ))
           }
-        </div>
+        </div> -->
       </div>
     </div>
     <!-- CITA DESTACADA -->
