@@ -2,7 +2,7 @@
 title: 'Growatt vs Huawei: Comparativa de Inversores Solares en Colombia'
 excerpt: 'Descubre cuál es el inversor ideal para tu sistema solar fotovoltaico según rendimiento, conectividad y soporte técnico.'
 date: 2025-05-17
-image: '/img/servicio2.png'
+image: /img/blog/blog_3.png
 category: 'Comparativas y Análisis'
 lang: es
 ---

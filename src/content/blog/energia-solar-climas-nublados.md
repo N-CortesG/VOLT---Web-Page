@@ -2,7 +2,7 @@
 title: ¿Funciona la Energía Solar en Climas Nublados o Lluviosos?
 excerpt: Aprende cómo los paneles solares siguen generando energía incluso en días con poca luz y si vale la pena instalar en tu ciudad.
 date: 2025-05-17
-image: /img/servicio2.png
+image: /img/blog/blog_4.png
 category: Artículos y Consejos
 lang: es
 ---

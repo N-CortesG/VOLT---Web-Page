@@ -15,7 +15,7 @@ const posts = [
   {
     title: '¿Cuánto se puede ahorrar con paneles solares?',
     category: 'Artículos y Consejos',
-    image: '/img/servicio1.png',
+    image: '/img/blog/blog_1.png',
     slug: 'ahorro-paneles-solares',
     excerpt:
       'Descubre cómo la energía solar puede reducir tus facturas hasta en un 90% y cómo calcular tu retorno de inversión.',
@@ -23,7 +23,7 @@ const posts = [
   {
     title: 'Nuevas políticas energéticas en Colombia',
     category: 'Noticias del Sector',
-    image: '/img/servicio1.png',
+    image: '/img/blog/blog_2.png',
     slug: 'politicas-energeticas-colombia',
     excerpt:
       'Conoce los cambios legislativos que están impulsando el uso de energía renovable en el país.',
@@ -31,7 +31,7 @@ const posts = [
   {
     title: 'Growatt vs Huawei: ¿Qué inversor es mejor?',
     category: 'Comparativas y Análisis',
-    image: '/img/servicio1.png',
+    image: '/img/blog/blog_3.png',
     slug: 'comparativa-inversores-growatt-huawei',
     excerpt:
       'Analizamos dos de los inversores solares más usados en Colombia: rendimiento, garantía y conectividad.',
@@ -39,7 +39,7 @@ const posts = [
   {
     title: 'Energía solar en climas nublados: ¿funciona igual?',
     category: 'Artículos y Consejos',
-    image: '/img/servicio2.png',
+    image: '/img/blog/blog_4.png',
     slug: 'energia-solar-climas-nublados',
     excerpt:
       '¿Vives en una zona con lluvias o neblina? Descubre si los paneles solares siguen siendo una buena inversión.',
@@ -47,14 +47,14 @@ const posts = [
   {
     title: '¿Qué mantenimiento requieren los paneles solares?',
     category: 'Artículos y Consejos',
-    image: '/img/servicio2.png',
+    image: '/img/blog/blog_5.png',
     slug: 'mantenimiento-paneles-solares',
     excerpt: 'Aprende cómo cuidar tu sistema solar y garantizar su eficiencia por más de 25 años.',
   },
   {
     title: '¿Por qué instalar energía solar en tu empresa mejora su reputación?',
     category: 'Energía Renovable',
-    image: '/img/servicio2.png',
+    image: '/img/blog/blog_6.png',
     slug: 'energia-solar-empresa-reputacion',
     excerpt:
       'Las empresas sostenibles son mejor valoradas por clientes, inversionistas y gobiernos. Descubre por qué.',
@@ -63,7 +63,9 @@ const posts = [
 ---
 
 <Layout title={`VOLT Solar Energy | ${t.header.blog}`}>
-  <section class="py-20 px-4 md:px-12 lg:px-20 bg-background dark:bg-dark-background mt-10">
+  <section
+    class="py-20 px-4 md:px-12 lg:px-20 bg-background-secondary dark:bg-dark-secondary mt-10"
+  >
     <div class="max-w-5xl mx-auto text-center mb-14" data-aos="fade-up">
       <h1 class="text-4xl md:text-5xl font-extrabold text-text-primary dark:text-dark-text-primary">
         {t.blog.title}
@@ -75,7 +77,7 @@ const posts = [
 
     <div class="grid lg:grid-cols-[250px_1fr] gap-8 max-w-7xl mx-auto">
       <aside
-        class="sticky top-28 h-fit bg-background-secondary dark:bg-dark-secondary p-6 rounded-xl shadow"
+        class="hidden lg:block sticky top-28 h-fit bg-background dark:bg-dark-background p-6 rounded-xl shadow"
       >
         <h3 class="text-lg font-semibold mb-4 text-text-primary dark:text-dark-text-primary">
           {currentLang === 'es' ? 'Publicaciones' : 'Posts'}
@@ -96,11 +98,11 @@ const posts = [
         </ul>
       </aside>
 
-      <div class="space-y-24">
+      <div class="space-y-12 md:space-y-16 lg:space-y-24">
         {
           posts.map((post, index) => (
             <article
-              class="bg-white dark:bg-dark-secondary rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
+              class="bg-background dark:bg-dark-background rounded-xl overflow-hidden shadow-lg hover:shadow-xl transition-all"
               data-aos="fade-up"
               data-aos-delay={index * 100}
             >
@@ -124,7 +126,7 @@ const posts = [
                   href={`/${currentLang}/blog/${post.slug}`}
                   class="inline-block text-green-light dark:text-dark-green-lime font-semibold hover:underline"
                 >
-                  Leer más →
+                  {t.blog.readMore} →
                 </a>
               </div>
             </article>

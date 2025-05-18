@@ -2,7 +2,7 @@
 title: Ahorra hasta un 90% con Energía Solar en tu Hogar o Negocio
 excerpt: Conoce cómo la energía solar puede ayudarte a reducir drásticamente tu factura de electricidad, protegerte frente a tarifas crecientes y aumentar el valor de tu propiedad.
 date: 2024-05-16
-image: /img/servicio2.png
+image: /img/blog/blog_1.png
 category: Eficiencia Energética
 lang: es
 ---

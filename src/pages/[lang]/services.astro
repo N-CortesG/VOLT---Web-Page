@@ -26,11 +26,11 @@ export async function getStaticPaths() {
 
 const icons = [Bolt, Ruler, Wrench, ShieldCheck, Award];
 const images = [
-  '/img/servicio1.png',
-  '/img/servicio2.png',
-  '/img/servicio3.png',
-  '/img/servicio4.png',
-  '/img/servicio5.png',
+  '/img/services/service_1.png',
+  '/img/services/service_2.png',
+  '/img/services/service_3.png',
+  '/img/services/service_4.png',
+  '/img/services/service_5.png',
 ];
 
 const serviceList = t.services.list.map((item, index) => ({
@@ -44,7 +44,7 @@ const serviceList = t.services.list.map((item, index) => ({
   <Hero
     title={t.services.title}
     subtitle={t.services.subtitle}
-    image="/img/img_1.jpg"
+    image="/img/services/hero.jpg"
     lang={currentLang}
     t={t}
   />
@@ -99,7 +99,7 @@ const serviceList = t.services.list.map((item, index) => ({
       <!-- Imagen -->
       <div class="rounded-3xl overflow-hidden shadow-xl">
         <img
-          src="/img/servicio6.png"
+          src="/img/services/service_6.png"
           alt="Sistemas solares instalados"
           class="w-full h-full object-cover"
           loading="lazy"

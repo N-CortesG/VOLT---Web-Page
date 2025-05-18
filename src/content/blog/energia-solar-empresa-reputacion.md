@@ -2,7 +2,7 @@
 title: ¿Por Qué Instalar Energía Solar en tu Empresa Mejora su Reputación?
 excerpt: Descubre cómo la energía solar posiciona tu negocio como líder en sostenibilidad y te da ventajas competitivas reales.
 date: 2025-05-17
-image: /img/servicio2.png
+image: /img/blog/blog_6.png
 category: Energía Renovable
 lang: es
 ---

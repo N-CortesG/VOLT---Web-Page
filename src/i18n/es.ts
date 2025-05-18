@@ -342,11 +342,6 @@ const es = {
   blog: {
     title: 'Blog Energético',
     subtitle: 'Explora ideas, consejos y noticias sobre energía solar',
-    categories: {
-      articles: 'Artículos y Consejos',
-      news: 'Noticias del Sector',
-      comparisons: 'Comparativas y Análisis',
-    },
     readMore: 'Leer más',
   },
 

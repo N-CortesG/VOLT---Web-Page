@@ -2,7 +2,7 @@
 title: Nuevas Políticas Energéticas en Colombia que Impulsan la Energía Solar
 excerpt: Conoce los beneficios legales, tributarios y regulatorios que hoy facilitan el acceso a soluciones solares en el país.
 date: 2025-05-17
-image: /img/servicio2.png
+image: /img/blog/blog_2.png
 category: Noticias del Sector
 lang: es
 ---

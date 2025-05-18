@@ -2,7 +2,7 @@
 title: ¿Qué Mantenimiento Requieren los Paneles Solares?
 excerpt: Descubre cómo mantener tu sistema solar funcionando con eficiencia durante más de 25 años con tareas simples y efectivas.
 date: 2025-05-17
-image: /img/servicio2.png
+image: /img/blog/blog_5.png
 category: Artículos y Consejos
 lang: es
 ---

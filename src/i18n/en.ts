@@ -340,11 +340,6 @@ const en = {
   blog: {
     title: 'Energy Blog',
     subtitle: 'Explore ideas, tips and news about solar energy',
-    categories: {
-      articles: 'Articles & Tips',
-      news: 'Industry News',
-      comparisons: 'Comparisons & Reviews',
-    },
     readMore: 'Read more',
   },
 
